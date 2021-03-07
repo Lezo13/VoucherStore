@@ -1,171 +1,10 @@
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
-  /***/
-  "../../../Voucher-Shop-Front-End-/Frontend-Seed/node_modules/@angular/core/__ivy_ngcc__/fesm2015 lazy recursive":
-  /*!***********************************************************************************************************************************************************************!*\
-    !*** D:/Users/LezoWork/Documents/GitHub/OnBoardTraining/Voucher-Shop-Front-End-/Frontend-Seed/node_modules/@angular/core/__ivy_ngcc__/fesm2015 lazy namespace object ***!
-    \***********************************************************************************************************************************************************************/
-
-  /*! no static exports found */
-
-  /***/
-  function VoucherShopFrontEndFrontendSeedNode_modulesAngularCore__ivy_ngcc__Fesm2015LazyRecursive(module, exports) {
-    function webpackEmptyAsyncContext(req) {
-      // Here Promise.resolve().then() is used instead of new Promise() to prevent
-      // uncaught exception popping up in devtools
-      return Promise.resolve().then(function () {
-        var e = new Error("Cannot find module '" + req + "'");
-        e.code = 'MODULE_NOT_FOUND';
-        throw e;
-      });
-    }
-
-    webpackEmptyAsyncContext.keys = function () {
-      return [];
-    };
-
-    webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-    module.exports = webpackEmptyAsyncContext;
-    webpackEmptyAsyncContext.id = "../../../Voucher-Shop-Front-End-/Frontend-Seed/node_modules/@angular/core/__ivy_ngcc__/fesm2015 lazy recursive";
-    /***/
-  },
-
-  /***/
-  "../../../Voucher-Shop-Front-End-/Frontend-Seed/src/app/core/services/orderService/SelectVoucher.service.ts":
-  /*!************************************************************************************************************************************************************!*\
-    !*** D:/Users/LezoWork/Documents/GitHub/OnBoardTraining/Voucher-Shop-Front-End-/Frontend-Seed/src/app/core/services/orderService/SelectVoucher.service.ts ***!
-    \************************************************************************************************************************************************************/
-
-  /*! exports provided: DataService */
-
-  /***/
-  function VoucherShopFrontEndFrontendSeedSrcAppCoreServicesOrderServiceSelectVoucherServiceTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "DataService", function () {
-      return DataService;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "../../../Voucher-Shop-Front-End-/Frontend-Seed/node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "../../../Voucher-Shop-Front-End-/Frontend-Seed/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! rxjs */
-    "../../../Voucher-Shop-Front-End-/Frontend-Seed/node_modules/rxjs/_esm2015/index.js");
-    /* harmony import */
-
-
-    var src_app_shared_models_orderitem_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! src/app/_shared/models/orderitem.model */
-    "./src/app/_shared/models/orderitem.model.ts");
-
-    var DataService = /*#__PURE__*/function () {
-      function DataService() {
-        _classCallCheck(this, DataService);
-
-        this.orderlist = new Array();
-        this.cartNumber = 0;
-        this.currentVoucherName = '';
-        this.currentQty = 0;
-        this.currentPrice = 0;
-        this.totalPrice = 0;
-        this.messageSource = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]('default message');
-        this.currentMessage = this.messageSource.asObservable();
-      }
-
-      _createClass(DataService, [{
-        key: "changeMessage",
-        value: function changeMessage(message) {
-          this.messageSource.next(message);
-        }
-      }, {
-        key: "changeToBtnSelect",
-        value: function changeToBtnSelect() {
-          this.btn.name = 'select';
-          this.btn.firstChild.textContent = 'SELECT';
-          this.btn.classList.remove('red');
-          this.btn.classList.remove('accent-2');
-          this.btn.classList.add('amber');
-          this.btn.classList.add('darken-3');
-        }
-      }, {
-        key: "changeToBtnRemove",
-        value: function changeToBtnRemove() {
-          this.btn.name = 'remove';
-          this.btn.firstChild.textContent = "REMOVE (".concat(this.currentQty, ")");
-          this.btn.classList.remove('amber');
-          this.btn.classList.remove('darken-3');
-          this.btn.classList.add('red');
-          this.btn.classList.add('accent-2');
-        }
-      }, {
-        key: "pushOrder",
-        value: function pushOrder() {
-          var orders = {
-            voucherName: this.currentVoucherName,
-            itemPrice: this.currentPrice,
-            itemQty: this.currentQty
-          };
-          var items = new src_app_shared_models_orderitem_model__WEBPACK_IMPORTED_MODULE_3__["OrderItem"]();
-          items.voucherName = this.currentVoucherName;
-          items.itemPrice = this.currentPrice;
-          items.itemQty = this.currentQty;
-          this.orderlist.push(items);
-        }
-      }, {
-        key: "decreaseCartCount",
-        value: function decreaseCartCount() {
-          this.cartNumber -= 1;
-        }
-      }, {
-        key: "decreasePrice",
-        value: function decreasePrice(priceToDecrease) {
-          this.totalPrice -= priceToDecrease;
-        }
-      }, {
-        key: "resetService",
-        value: function resetService() {
-          this.orderlist = new Array();
-          this.cartNumber = 0;
-          this.btn = null;
-          this.currentVoucherName = '';
-          this.currentQty = 0;
-          this.currentPrice = 0;
-          this.totalPrice = 0;
-          this.messageSource = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]('default message');
-          this.currentMessage = this.messageSource.asObservable();
-        }
-      }]);
-
-      return DataService;
-    }();
-
-    DataService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-      providedIn: 'root'
-    })], DataService);
-    /***/
-  },
-
   /***/
   "./$$_lazy_route_resource lazy recursive":
   /*!******************************************************!*\
@@ -392,7 +231,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\r\n<mdb-navbar SideClass=\"navbar navbar-expand-lg navbar-dark red lighten-3\">\r\n\r\n    <mdb-navbar-brand>\r\n      <a class=\"navbar-brand\" href=\"#\">\r\n        <img src=\"https://bit.ly/305p5iH\" height=\"60\" class=\"d-inline-block align-top\" alt=\"\">\r\n      </a>\r\n    </mdb-navbar-brand>\r\n  \r\n    <mdb-icon fas icon=\"angle-left\" size=\"lg\" class=\"text-white mr-auto d-flex d-md-none align-self-center\"></mdb-icon>\r\n  \r\n    <links>\r\n  \r\n      <ul class=\"navbar-nav mr-auto\">\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect (click)=\"goToPage('home')\">Home<span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect (click)=\"goToPage('order')\">Order Now</a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect (click)=\"goToPage('vieworders')\">View Orders</a>\r\n        </li>\r\n        <li class=\"nav-item active\">\r\n            <a class=\"nav-link waves-light\" mdbWavesEffect>Order Form<span class=\"sr-only\">(current)</span></a>\r\n          </li>\r\n  \r\n      </ul>\r\n  \r\n      \r\n    </links>\r\n  \r\n  </mdb-navbar>";
+    __webpack_exports__["default"] = "\r\n<mdb-navbar SideClass=\"navbar navbar-expand-lg navbar-dark red lighten-3\">\r\n\r\n    <mdb-navbar-brand>\r\n      <a class=\"navbar-brand\" href=\"#\">\r\n        <img src=\"https://bit.ly/305p5iH\" height=\"60\" class=\"d-inline-block align-top\" alt=\"\">\r\n      </a>\r\n    </mdb-navbar-brand>\r\n  \r\n    <mdb-icon fas icon=\"angle-left\" size=\"lg\" class=\"text-white mr-auto d-flex d-md-none align-self-center\"></mdb-icon>\r\n  \r\n    <links>\r\n  \r\n      <ul class=\"navbar-nav mr-auto\">\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect (click)=\"goToPage('home')\">Home<span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect (click)=\"goToPage('order')\">Order Now</a>\r\n        </li>\r\n        <li class=\"nav-item active\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect>Order Form<span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect (click)=\"goToPage('vieworders')\">Find Orders</a>\r\n        </li>\r\n        \r\n  \r\n      </ul>\r\n  \r\n      \r\n    </links>\r\n  \r\n  </mdb-navbar>";
     /***/
   },
 
@@ -472,7 +311,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"green lighten-4\">\r\n  <table mdbTable>\r\n  <thead class=\"black white-text\">\r\n    <tr>\r\n      <th scope=\"col\">Date Ordered </th>\r\n      <th scope=\"col\">Order No. </th>\r\n      <th scope=\"col\">Voucher Name </th>\r\n      <th scope=\"col\">Item Quantity </th>\r\n      <th scope=\"col\">Total Price </th>\r\n      <th scope=\"col\">Sender's Email Address </th>\r\n      <th scope=\"col\">Sender's Name </th>\r\n      <th scope=\"col\">Recipient's Email Address </th>\r\n      <th scope=\"col\">Recipient's Name </th>\r\n      <th scope=\"col\">Dedication</th>\r\n    </tr> \r\n  </thead>\r\n  <tbody>\r\n      <tr>\r\n        <th scope=\"row\">1</th>\r\n        <td>TEST</td>\r\n        <td>TEST</td>\r\n        <td>TEST</td>\r\n        <td>TEST</td>\r\n        <td>TEST</td>\r\n        <td>TEST</td>\r\n        <td>TEST</td>\r\n        <td>TEST</td>\r\n        <td>TEST</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n  \r\n</div>";
+    __webpack_exports__["default"] = "<div class=\"green lighten-4\">\r\n  <table mdbTable>\r\n  <thead class=\"black white-text\">\r\n    <tr>\r\n      <th *ngFor=\"let column of headers\" scope=\"col\" class=\"th--bold\">\r\n        {{column}}\r\n    </tr> \r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let row of rows\">\r\n      <td *ngFor=\"let column of headers\">{{row[column]}}</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n  \r\n</div>";
     /***/
   },
 
@@ -492,7 +331,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<h2 class=\"mt-5 text-center\">List of Orders <mdb-icon fas icon=\"cart-arrow-down\"></mdb-icon></h2>\r\n      \r\n<form class=\"form-inline md-form mr-auto mb-4\">\r\n    <input class=\"form-control mr-sm-5 inputSearch--resize \" type=\"text\" placeholder=\"Enter email address used to purchased the order\" aria-label=\"Search\">\r\n    <button mdbBtn type=\"button\" color=\"info\" outline=\"true\" mdbWavesEffect>Search<mdb-icon fas icon=\"search\" class=\"ml-1\"></mdb-icon></button>\r\n</form>";
+    __webpack_exports__["default"] = "<h2 class=\"mt-5 text-center\">List of Orders <mdb-icon fas icon=\"cart-arrow-down\"></mdb-icon></h2>\r\n      \r\n<form class=\"form-inline md-form mr-auto mb-4\">\r\n    <input class=\"form-control mr-sm-5 inputSearch--resize \" type=\"text\" placeholder=\"Enter email address used to purchased the order\" aria-label=\"Search\" #inputEmail>\r\n    <button mdbBtn type=\"button\" color=\"info\" outline=\"true\" mdbWavesEffect (click)=\"SearchOrders(inputEmail.value)\">Search<mdb-icon fas icon=\"search\" class=\"ml-1\"></mdb-icon></button>\r\n</form>";
     /***/
   },
 
@@ -1051,9 +890,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _Voucher_Shop_Front_End_Frontend_Seed_src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! ./../../../../../../../Voucher-Shop-Front-End-/Frontend-Seed/src/app/core/services/orderService/SelectVoucher.service */
-    "../../../Voucher-Shop-Front-End-/Frontend-Seed/src/app/core/services/orderService/SelectVoucher.service.ts");
+    var src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! src/app/core/services/orderService/SelectVoucher.service */
+    "./src/app/core/services/orderService/SelectVoucher.service.ts");
     /* harmony import */
 
 
@@ -1074,7 +913,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AuthHeaderInterceptor, [{
         key: "intercept",
         value: function intercept(request, next) {
-          this.spinnerService.requestStarted();
+          console.log(request);
+
+          if (request.url === 'api/place_order') {
+            this.spinnerService.requestStarted();
+          }
+
           return this.handler(next, request);
         }
       }, {
@@ -1084,9 +928,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           return next.handle(request).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (event) {
             if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpResponse"]) {
-              _this.spinnerService.requestEnded();
+              if (_this.spinnerService.spinnerStatus && event.status >= 200 && event.status <= 202) {
+                _this.spinnerService.requestEnded();
 
-              if (event.status >= 200 && event.status <= 202) {
                 _this._data.resetService();
 
                 _this._toastrService.success('The order has been placed!', 'PURCHASE COMPLETED', {
@@ -1104,7 +948,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             _this.spinnerService.resetSpinner();
 
             try {
-              if (error.status === 500) {
+              if (_this.spinnerService.spinnerStatus && error.status === 500) {
                 _this._data.resetService();
 
                 _this._toastrService.error("An error occured on the server's side. " + 'You may have entered an unrecognized service email', 'PURCHASE INCOMPLETE', {
@@ -1118,17 +962,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 }, 1900);
               }
             } catch (e) {
-              _this._data.resetService();
+              if (_this.spinnerService) {
+                _this._data.resetService();
 
-              _this._toastrService.error(e, 'Error Occurred', {
-                timeOut: 2000
-              });
-
-              setTimeout(function () {
-                _this.router.navigate(['order']).then(function () {
-                  window.location.reload();
+                _this._toastrService.error(e, 'Error Occurred', {
+                  timeOut: 2000
                 });
-              }, 1900);
+
+                setTimeout(function () {
+                  _this.router.navigate(['order']).then(function () {
+                    window.location.reload();
+                  });
+                }, 1900);
+              }
             }
 
             throw error;
@@ -1147,7 +993,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
       }, {
-        type: _Voucher_Shop_Front_End_Frontend_Seed_src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_6__["DataService"]
+        type: src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_6__["DataService"]
       }];
     };
 
@@ -1237,6 +1083,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       function SpinnerService() {
         _classCallCheck(this, SpinnerService);
 
+        this.spinnerStatus = false;
         this.count = 0;
         this.spinner$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]('');
       }
@@ -1250,6 +1097,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "requestStarted",
         value: function requestStarted() {
           if (++this.count === 1) {
+            this.spinnerStatus = true;
             this.spinner$.next('start');
           }
         }
@@ -1257,6 +1105,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "requestEnded",
         value: function requestEnded() {
           if (this.count === 0 || --this.count === 0) {
+            this.spinnerStatus = false;
             this.spinner$.next('stop');
           }
         }
@@ -1337,6 +1186,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }).toPromise().then(function (data) {
             console.log(data);
           });
+        }
+      }, {
+        key: "getOrders",
+        value: function getOrders(senderEmail) {
+          var url = 'api/display_order';
+          var result = [];
+
+          this._http.post(url, {
+            SenderEmail: senderEmail
+          }).toPromise().then(function (data) {
+            data.data.forEach(function (element) {
+              result.push(element);
+            });
+          });
+
+          return result;
         }
       }]);
 
@@ -2978,6 +2843,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var OrderlistTableComponent = /*#__PURE__*/function () {
       function OrderlistTableComponent() {
         _classCallCheck(this, OrderlistTableComponent);
+
+        this.rows = [];
+        this.headers = ['#', 'Order Date', 'Total Spent', 'Sender Email', 'Sender Name', 'Recipient Email', 'Recipient Name', 'Dedication'];
+        this.rows = null;
+        this.rows = [];
+        var iterateNum = 0;
       }
 
       _createClass(OrderlistTableComponent, [{
@@ -3051,19 +2922,42 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_app_core_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! src/app/core/services/api.service */
+    "./src/app/core/services/api.service.ts");
 
     var OrderlistTopComponent = /*#__PURE__*/function () {
-      function OrderlistTopComponent() {
+      function OrderlistTopComponent(_apiCall) {
         _classCallCheck(this, OrderlistTopComponent);
+
+        this._apiCall = _apiCall;
       }
 
       _createClass(OrderlistTopComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "SearchOrders",
+        value: function SearchOrders(inputEmail) {
+          console.log(inputEmail);
+
+          var data = this._apiCall.getOrders(inputEmail);
+
+          console.log(data);
+        }
       }]);
 
       return OrderlistTopComponent;
     }();
+
+    OrderlistTopComponent.ctorParameters = function () {
+      return [{
+        type: src_app_core_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+      }];
+    };
 
     OrderlistTopComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-orderlist-top',

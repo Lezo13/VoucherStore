@@ -13,7 +13,7 @@
                 CommandType = CommandType.StoredProcedure,
                 CommandTimeout = 60
             };
-            result.Parameters.AddWithValue("@email", customer.SenderEmail);
+            result.Parameters.AddWithValue("@senderEmail", customer.SenderEmail);
 
             return result;
         }

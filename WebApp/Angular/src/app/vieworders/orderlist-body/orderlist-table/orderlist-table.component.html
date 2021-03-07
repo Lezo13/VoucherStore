@@ -2,30 +2,13 @@
   <table mdbTable>
   <thead class="black white-text">
     <tr>
-      <th scope="col">Date Ordered </th>
-      <th scope="col">Order No. </th>
-      <th scope="col">Voucher Name </th>
-      <th scope="col">Item Quantity </th>
-      <th scope="col">Total Price </th>
-      <th scope="col">Sender's Email Address </th>
-      <th scope="col">Sender's Name </th>
-      <th scope="col">Recipient's Email Address </th>
-      <th scope="col">Recipient's Name </th>
-      <th scope="col">Dedication</th>
+      <th *ngFor="let column of headers" scope="col" class="th--bold">
+        {{column}}
     </tr> 
   </thead>
   <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>TEST</td>
-        <td>TEST</td>
-        <td>TEST</td>
-        <td>TEST</td>
-        <td>TEST</td>
-        <td>TEST</td>
-        <td>TEST</td>
-        <td>TEST</td>
-        <td>TEST</td>
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let column of headers">{{row[column]}}</td>
       </tr>
     </tbody>
   </table>

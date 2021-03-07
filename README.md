@@ -43,8 +43,5 @@ Purchase store vouchers and send as a gift to your relatives, friends, and etc.
 
 ## NOTES (so far)
 
-- #### Used command `npm install ngx-toastr --save` to install ngx Toast package
-- #### Fixed Toast Message to show success and error info on order placement
-- #### Prevented inserting to database if unrecognized service email
-- #### Fixed cart number to refresh when re-routing/navigating used page reload
-- #### Enabled use of hashing for page routes in apps-routing
+- #### Fixed Diplay Order API there were missing orderNo not set
+- #### Able to fetch data from server to front end (Displaying to table needed)

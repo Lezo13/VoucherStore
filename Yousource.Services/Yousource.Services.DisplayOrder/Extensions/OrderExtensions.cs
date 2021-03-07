@@ -30,6 +30,7 @@
             var result = new Orders
             {
                 OrderDate = entity.OrderDate,
+                OrderNo = entity.OrderNo,
                 TotalSpent = entity.TotalSpent,
                 SenderEmail = entity.SenderEmail,
                 SenderName = entity.SenderName,

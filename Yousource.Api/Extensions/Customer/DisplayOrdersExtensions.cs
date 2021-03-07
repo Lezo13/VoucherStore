@@ -39,6 +39,7 @@
             return new OrdersWebModel
             {
                 OrderDate = model.OrderDate,
+                OrderNo = model.OrderNo,
                 TotalSpent = model.TotalSpent,
                 SenderEmail = model.SenderEmail,
                 SenderName = model.SenderName,

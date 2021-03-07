@@ -10,6 +10,9 @@
         public DateTime OrderDate { get; set; }
 
         [DataMember]
+        public Guid OrderNo { get; set; }
+
+        [DataMember]
         public int TotalSpent { get; set; }
 
         [DataMember]

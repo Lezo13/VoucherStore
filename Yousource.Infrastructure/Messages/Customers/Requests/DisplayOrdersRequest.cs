@@ -13,13 +13,7 @@
         public Guid OrderNo { get; set; }
 
         [DataMember]
-        public string VoucherName { get; set; }
-
-        [DataMember]
-        public int ItemQty { get; set; }
-
-        [DataMember]
-        public double TotalPrice { get; set; }
+        public double TotalSpent { get; set; }
 
         [DataMember]
         public string SenderEmail { get; set; }

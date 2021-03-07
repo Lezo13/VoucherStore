@@ -1,6 +1,6 @@
 <h2 class="mt-5 text-center">List of Orders <mdb-icon fas icon="cart-arrow-down"></mdb-icon></h2>
       
 <form class="form-inline md-form mr-auto mb-4">
-    <input class="form-control mr-sm-5 inputSearch--resize " type="text" placeholder="Enter email address used to purchased the order" aria-label="Search">
-    <button mdbBtn type="button" color="info" outline="true" mdbWavesEffect>Search<mdb-icon fas icon="search" class="ml-1"></mdb-icon></button>
+    <input class="form-control mr-sm-5 inputSearch--resize " type="text" placeholder="Enter email address used to purchased the order" aria-label="Search" #inputEmail>
+    <button mdbBtn type="button" color="info" outline="true" mdbWavesEffect (click)="SearchOrders(inputEmail.value)">Search<mdb-icon fas icon="search" class="ml-1"></mdb-icon></button>
 </form>

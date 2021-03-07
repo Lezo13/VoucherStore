@@ -3,9 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpErrorResponse, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DataService } from 'src/app/core/services/orderService/SelectVoucher.service';
 
-import { DataService } from './../../../../../../../Voucher-Shop-Front-End-/Frontend-Seed/src/app/core/services/orderService/SelectVoucher.service';
 import { SpinnerService } from './../services/SpinnerService/spinner.service';
 
 @Injectable()
@@ -14,8 +13,12 @@ export class AuthHeaderInterceptor implements HttpInterceptor {
     private _data: DataService) {}
 
     intercept(request: HttpRequest<any>, next: HttpHandler) {
-    this.spinnerService.requestStarted();
-    return this.handler(next, request);
+        console.log(request);
+        if (request.url === 'api/place_order') {
+        this.spinnerService.requestStarted();
+
+        }
+        return this.handler(next, request);
     }
 
     handler(next, request) {
@@ -24,8 +27,8 @@ export class AuthHeaderInterceptor implements HttpInterceptor {
             tap(
                 event => {
                     if (event instanceof HttpResponse) {
-                        this.spinnerService.requestEnded();
-                        if (event.status >= 200 && event.status <= 202) {
+                        if (this.spinnerService.spinnerStatus && event.status >= 200 && event.status <= 202) {
+                            this.spinnerService.requestEnded();
                             this._data.resetService();
                             this._toastrService.success('The order has been placed!', 'PURCHASE COMPLETED', {
                             timeOut: 2000});
@@ -42,7 +45,7 @@ export class AuthHeaderInterceptor implements HttpInterceptor {
                 (error: HttpErrorResponse) => {
                     this.spinnerService.resetSpinner();
                     try {
-                        if (error.status === 500) {
+                        if (this.spinnerService.spinnerStatus && error.status === 500) {
                             this._data.resetService();
                             this._toastrService.error("An error occured on the server's side. "
                             + 'You may have entered an unrecognized service email', 'PURCHASE INCOMPLETE',  {
@@ -57,6 +60,7 @@ export class AuthHeaderInterceptor implements HttpInterceptor {
                         }
 
                     } catch (e) {
+                        if (this.spinnerService) {
                         this._data.resetService();
                         this._toastrService.error(e, 'Error Occurred', {
                             timeOut: 2000});
@@ -64,6 +68,7 @@ export class AuthHeaderInterceptor implements HttpInterceptor {
                             .then(() => {
                                 window.location.reload();
                             }); }, 1900);
+                        }
 
                     }
                     throw error;
