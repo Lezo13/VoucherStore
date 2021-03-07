@@ -1,0 +1,21 @@
+.fontItem--change
+{
+    color: rgb(25, 40, 255);
+    font-weight: bold;
+    margin-left: 30%;
+}
+.inputFont--change
+{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+.textBox--error
+{
+    border:2px solid red;
+}
+
+.textBox--normal
+{
+    outline-color: red;
+}

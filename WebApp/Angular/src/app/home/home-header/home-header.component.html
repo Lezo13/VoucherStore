@@ -1,0 +1,32 @@
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark blue darken-1">
+
+    <mdb-navbar-brand>
+      <a class="navbar-brand" href="#">
+        <img src="https://bit.ly/305p5iH" height="60" class="d-inline-block align-top" alt="">
+      </a>
+    </mdb-navbar-brand>
+  
+    <mdb-icon fas icon="angle-left" size="lg" class="text-white mr-auto d-flex d-md-none align-self-center"></mdb-icon>
+  
+    <links>
+  
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect (click)="goToPage('order')">Order Now</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect (click)="goToPage('vieworders')">View Orders</a>
+        </li>
+  
+      </ul>
+  
+      
+    </links>
+  
+  
+  
+  </mdb-navbar>

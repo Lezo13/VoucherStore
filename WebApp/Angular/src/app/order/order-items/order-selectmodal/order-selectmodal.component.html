@@ -1,0 +1,15 @@
+<div  class="modal-header blue lighten-4">
+    <h4 class="modal-title fontItem--change">{{ itemName }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="form-outline amber lighten-5">
+
+    <input type="number" id="typeNumber" class="form-control text-center inputFont--change" value="1" #inputQty/>
+    <label class="form-label amber lighten-5 mt-1" for="typeNumber"><mdb-icon fas icon="cart-plus"></mdb-icon> Input Quantity</label>
+  </div>
+  <div class="text-center blue lighten-4">
+    <button type="button" mdbBtn color="danger" class="waves-light" aria-label="Close" (click)="activeModal.close('Close click')" mdbWavesEffect>Close</button>
+  <button type="button" mdbBtn color="success" class="relative waves-light" mdbWavesEffect (click)="PlaceOrder(inputQty)">Place</button>
+  </div>

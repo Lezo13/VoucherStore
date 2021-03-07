@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[Orders]
+(
+	[OrderNo] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT NEWID(), 
+	[SenderID] UNIQUEIDENTIFIER NOT NULL, 
+	[RecipientID] UNIQUEIDENTIFIER NOT NULL, 
+	[TotalSpent] INT NOT NULL, 
+	[OrderDate] DATETIME NOT NULL DEFAULT GETUTCDATE(), 
+	[Dedication] NVARCHAR(MAX) NULL, 
+    CONSTRAINT [FK_Orders_ToSenders] FOREIGN KEY ([SenderID]) REFERENCES [Senders]([SenderID]), 
+    CONSTRAINT [FK_Orders_ToRecipients] FOREIGN KEY ([RecipientID]) REFERENCES [Recipients]([RecipientID])
+)

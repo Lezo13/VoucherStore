@@ -1,0 +1,68 @@
+<div class="panelForm--resize">
+
+    <form class="p-5" [formGroup]="validatingForm">
+
+      <mdb-card class="card--change">
+        <mdb-card-header class="cardHeader--change text-center light-blue darken-1">Sender's Details</mdb-card-header>
+        <mdb-card-body class="light-blue lighten-4">  
+          
+          <div class="md-form">
+            <mdb-icon fas icon="user-alt" class="prefix"></mdb-icon>
+            <input mdbInput mdbValidate type="text" id="form8" class="form-control" formControlName="sendername">
+            <label for="form8">Sender's Name</label>
+            <mdb-error *ngIf="GetInputSenderName.invalid && (GetInputSenderName.dirty || GetInputSenderName.touched)">Name is required</mdb-error>
+          </div>
+        
+          <div class="md-form">
+            <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
+            <input mdbInput mdbValidate type="email" id="form8" class="form-control" formControlName="senderemail">
+            <label for="form8">Sender's Email Address</label>
+            <mdb-error *ngIf="GetInputSenderEmail.invalid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)">Email address is invalid</mdb-error>
+            <mdb-success *ngIf="GetInputSenderEmail.valid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)">Email address is valid</mdb-success>
+          </div>
+      
+        </mdb-card-body>
+      </mdb-card>
+    
+      <mdb-card class="card--change">
+        <mdb-card-header class="cardHeader--change text-center green accent-3">Recipient's Details</mdb-card-header>
+
+        <mdb-card-body class="green accent-1">
+          
+          <div class="md-form">
+            <mdb-icon fas icon="user-alt" class="prefix"></mdb-icon>
+            <input mdbInput mdbValidate type="text" id="form8" class="form-control" formControlName="recipientname">
+            <label for="form8">Recipient's Name</label>
+            <mdb-error *ngIf="GetInputRecipientName.invalid && (GetInputRecipientName.dirty || GetInputRecipientName.touched)">Name is required</mdb-error>
+          </div>
+          <div class="md-form">
+            <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
+            <input mdbInput mdbValidate type="email" id="form8" class="form-control" formControlName="recipientemail">
+            <label for="form8">Recipient's Email Address</label>
+            <mdb-error *ngIf="GetInputRecipientEmail.invalid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)">Email address is invalid</mdb-error>
+            <mdb-success *ngIf="GetInputRecipientEmail.valid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)">Email address is valid</mdb-success>
+          </div>
+
+        
+        </mdb-card-body>
+
+      </mdb-card>
+    
+      <div>
+        <h4 class="font-weight-bold text-center">Dedication</h4>
+    
+        <div class="form-group">
+          <textarea class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
+            rows="3" placeholder="Message" formControlName="dedication"></textarea>
+        </div>
+    
+        <button mdbBtn color="light-green" block="true" class="z-depth-0 my-4 waves-effect"
+          mdbWavesEffect type="submit" [disabled]="clickedFlag" (click)="SubmitOrder()">Purchase Order <mdb-icon fas icon="shopping-cart"></mdb-icon></button></div>
+      
+      </form>
+    
+
+      
+    </div>
+
+

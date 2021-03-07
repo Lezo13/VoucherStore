@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Senders]
+(
+	[SenderID] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY , 
+    [SenderEmail] VARCHAR(254) NOT NULL, 
+    [SenderName] VARCHAR(70) NOT NULL, 
+)

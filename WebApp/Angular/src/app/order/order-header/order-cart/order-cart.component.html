@@ -1,0 +1,28 @@
+<div  class="modal-header blue lighten-4">
+    <h4 class="modal-title fontHeader--change">Cart Details</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="form-outline amber lighten-5">
+
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th *ngFor="let column of headers" scope="col" class="th--bold">
+            {{column}}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows">
+          <td *ngFor="let column of headers">{{row[column]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-center blue lighten-4">
+    <h4 class="modal-title pt-3 mb-3">TOTAL: <a class="text-success">${{ totalPrice }}</a></h4>
+    <button type="button" mdbBtn color="deep-orange" class="waves-light" aria-label="Close" (click)="activeModal.close('Close click')" mdbWavesEffect>Close</button>
+  <button type="button" mdbBtn gradient="purple" class="relative waves-light" mdbWavesEffect (click)="CheckOut()">Checkout</button>
+  </div>
