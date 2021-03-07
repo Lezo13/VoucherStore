@@ -1,3 +1,4 @@
+import { DataService } from 'src/app/core/services/orderService/SelectVoucher.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,13 +9,15 @@ import { Router } from '@angular/router';
 })
 export class OrderlistHeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _data: DataService) { }
 
   ngOnInit(): void {
   }
 
   goToPage(pageName: string): void {
     this.router.navigate([`${pageName}`]);
+    this._data.resetService();
+
   }
 
 }

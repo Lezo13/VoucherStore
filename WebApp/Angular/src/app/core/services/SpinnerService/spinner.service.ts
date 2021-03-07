@@ -1,11 +1,13 @@
-import { Injectable } from '@angular/core';
+import { DataService } from 'src/app/core/services/orderService/SelectVoucher.service';
+import { Injectable, ViewChild, ElementRef } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpinnerService {
-
+  
+  toast: ElementRef;
   private count: number = 0;
   private spinner$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
@@ -23,7 +25,7 @@ export class SpinnerService {
 
   requestEnded(): void {
     if (this.count === 0 || --this.count === 0) {
-      this.spinner$.next('stop');
+        this.spinner$.next('stop');
     }
   }
 

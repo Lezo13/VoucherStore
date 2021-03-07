@@ -17,7 +17,7 @@ placeOrder(senderName, senderEmail ,recipientName, recipientEmail, dedication, t
         RecipientEmail: recipientEmail.value,
         Dedication: dedication.value,
         TotalSpent: totalSpent
-    }).toPromise().then((data: any) => {});
+    }).toPromise().then((data: any) => {console.log(data)});
   }
 
 }

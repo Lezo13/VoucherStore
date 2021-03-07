@@ -1,5 +1,116 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "../../../Voucher-Shop-Front-End-/Frontend-Seed/node_modules/@angular/core/__ivy_ngcc__/fesm2015 lazy recursive":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** D:/Users/LezoWork/Documents/GitHub/OnBoardTraining/Voucher-Shop-Front-End-/Frontend-Seed/node_modules/@angular/core/__ivy_ngcc__/fesm2015 lazy namespace object ***!
+  \***********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncaught exception popping up in devtools
+	return Promise.resolve().then(function() {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "../../../Voucher-Shop-Front-End-/Frontend-Seed/node_modules/@angular/core/__ivy_ngcc__/fesm2015 lazy recursive";
+
+/***/ }),
+
+/***/ "../../../Voucher-Shop-Front-End-/Frontend-Seed/src/app/core/services/orderService/SelectVoucher.service.ts":
+/*!************************************************************************************************************************************************************!*\
+  !*** D:/Users/LezoWork/Documents/GitHub/OnBoardTraining/Voucher-Shop-Front-End-/Frontend-Seed/src/app/core/services/orderService/SelectVoucher.service.ts ***!
+  \************************************************************************************************************************************************************/
+/*! exports provided: DataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../../Voucher-Shop-Front-End-/Frontend-Seed/node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../../Voucher-Shop-Front-End-/Frontend-Seed/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "../../../Voucher-Shop-Front-End-/Frontend-Seed/node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var src_app_shared_models_orderitem_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/_shared/models/orderitem.model */ "./src/app/_shared/models/orderitem.model.ts");
+
+
+
+
+let DataService = class DataService {
+    constructor() {
+        this.orderlist = new Array();
+        this.cartNumber = 0;
+        this.currentVoucherName = '';
+        this.currentQty = 0;
+        this.currentPrice = 0;
+        this.totalPrice = 0;
+        this.messageSource = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]('default message');
+        this.currentMessage = this.messageSource.asObservable();
+    }
+    changeMessage(message) {
+        this.messageSource.next(message);
+    }
+    changeToBtnSelect() {
+        this.btn.name = 'select';
+        this.btn.firstChild.textContent = 'SELECT';
+        this.btn.classList.remove('red');
+        this.btn.classList.remove('accent-2');
+        this.btn.classList.add('amber');
+        this.btn.classList.add('darken-3');
+    }
+    changeToBtnRemove() {
+        this.btn.name = 'remove';
+        this.btn.firstChild.textContent = `REMOVE (${this.currentQty})`;
+        this.btn.classList.remove('amber');
+        this.btn.classList.remove('darken-3');
+        this.btn.classList.add('red');
+        this.btn.classList.add('accent-2');
+    }
+    pushOrder() {
+        const orders = {
+            voucherName: this.currentVoucherName,
+            itemPrice: this.currentPrice,
+            itemQty: this.currentQty
+        };
+        const items = new src_app_shared_models_orderitem_model__WEBPACK_IMPORTED_MODULE_3__["OrderItem"]();
+        items.voucherName = this.currentVoucherName;
+        items.itemPrice = this.currentPrice;
+        items.itemQty = this.currentQty;
+        this.orderlist.push(items);
+    }
+    decreaseCartCount() {
+        this.cartNumber -= 1;
+    }
+    decreasePrice(priceToDecrease) {
+        this.totalPrice -= priceToDecrease;
+    }
+    resetService() {
+        this.orderlist = new Array();
+        this.cartNumber = 0;
+        this.btn = null;
+        this.currentVoucherName = '';
+        this.currentQty = 0;
+        this.currentPrice = 0;
+        this.totalPrice = 0;
+        this.messageSource = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]('default message');
+        this.currentMessage = this.messageSource.asObservable();
+    }
+};
+DataService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], DataService);
+
+
+
+/***/ }),
+
 /***/ "./$$_lazy_route_resource lazy recursive":
 /*!******************************************************!*\
   !*** ./$$_lazy_route_resource lazy namespace object ***!
@@ -136,7 +247,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"panelForm--resize\">\r\n\r\n    <form class=\"p-5\" [formGroup]=\"validatingForm\">\r\n\r\n      <mdb-card class=\"card--change\">\r\n        <mdb-card-header class=\"cardHeader--change text-center light-blue darken-1\">Sender's Details</mdb-card-header>\r\n        <mdb-card-body class=\"light-blue lighten-4\">  \r\n          \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"user-alt\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"text\" id=\"form8\" class=\"form-control\" formControlName=\"sendername\">\r\n            <label for=\"form8\">Sender's Name</label>\r\n            <mdb-error *ngIf=\"GetInputSenderName.invalid && (GetInputSenderName.dirty || GetInputSenderName.touched)\">Name is required</mdb-error>\r\n          </div>\r\n        \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"envelope\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"email\" id=\"form8\" class=\"form-control\" formControlName=\"senderemail\">\r\n            <label for=\"form8\">Sender's Email Address</label>\r\n            <mdb-error *ngIf=\"GetInputSenderEmail.invalid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)\">Email address is invalid</mdb-error>\r\n            <mdb-success *ngIf=\"GetInputSenderEmail.valid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)\">Email address is valid</mdb-success>\r\n          </div>\r\n      \r\n        </mdb-card-body>\r\n      </mdb-card>\r\n    \r\n      <mdb-card class=\"card--change\">\r\n        <mdb-card-header class=\"cardHeader--change text-center green accent-3\">Recipient's Details</mdb-card-header>\r\n\r\n        <mdb-card-body class=\"green accent-1\">\r\n          \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"user-alt\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"text\" id=\"form8\" class=\"form-control\" formControlName=\"recipientname\">\r\n            <label for=\"form8\">Recipient's Name</label>\r\n            <mdb-error *ngIf=\"GetInputRecipientName.invalid && (GetInputRecipientName.dirty || GetInputRecipientName.touched)\">Name is required</mdb-error>\r\n          </div>\r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"envelope\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"email\" id=\"form8\" class=\"form-control\" formControlName=\"recipientemail\">\r\n            <label for=\"form8\">Recipient's Email Address</label>\r\n            <mdb-error *ngIf=\"GetInputRecipientEmail.invalid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)\">Email address is invalid</mdb-error>\r\n            <mdb-success *ngIf=\"GetInputRecipientEmail.valid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)\">Email address is valid</mdb-success>\r\n          </div>\r\n\r\n        \r\n        </mdb-card-body>\r\n\r\n      </mdb-card>\r\n    \r\n      <div>\r\n        <h4 class=\"font-weight-bold text-center\">Dedication</h4>\r\n    \r\n        <div class=\"form-group\">\r\n          <textarea class=\"form-control rounded-0\" mdbInput id=\"dedication\"\r\n            rows=\"3\" placeholder=\"Message\" formControlName=\"dedication\"></textarea>\r\n        </div>\r\n    \r\n        <button mdbBtn color=\"light-green\" block=\"true\" class=\"z-depth-0 my-4 waves-effect\"\r\n          mdbWavesEffect type=\"submit\" [disabled]=\"clickedFlag\" (click)=\"SubmitOrder()\">Purchase Order <mdb-icon fas icon=\"shopping-cart\"></mdb-icon></button></div>\r\n      \r\n      </form>\r\n    \r\n\r\n      \r\n    </div>\r\n\r\n\r\n<app-spinner></app-spinner>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"panelForm--resize\">\r\n\r\n    <form class=\"p-5\" [formGroup]=\"validatingForm\" (keydown.enter)=\"$event.preventDefault()\">\r\n\r\n      <mdb-card class=\"card--change\">\r\n        <mdb-card-header class=\"cardHeader--change text-center light-blue darken-1\">Sender's Details</mdb-card-header>\r\n        <mdb-card-body class=\"light-blue lighten-4\">  \r\n          \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"user-alt\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"text\" id=\"form8\" class=\"form-control\" formControlName=\"sendername\">\r\n            <label for=\"form8\">Sender's Name</label>\r\n            <mdb-error *ngIf=\"GetInputSenderName.invalid && (GetInputSenderName.dirty || GetInputSenderName.touched)\">Name is required</mdb-error>\r\n          </div>\r\n        \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"envelope\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"email\" id=\"form8\" class=\"form-control\" formControlName=\"senderemail\">\r\n            <label for=\"form8\">Sender's Email Address</label>\r\n            <mdb-error *ngIf=\"GetInputSenderEmail.invalid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)\">Email address is invalid</mdb-error>\r\n            <mdb-success *ngIf=\"GetInputSenderEmail.valid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)\">Email address is valid</mdb-success>\r\n          </div>\r\n      \r\n        </mdb-card-body>\r\n      </mdb-card>\r\n    \r\n      <mdb-card class=\"card--change\">\r\n        <mdb-card-header class=\"cardHeader--change text-center green accent-3\">Recipient's Details</mdb-card-header>\r\n\r\n        <mdb-card-body class=\"green accent-1\">\r\n          \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"user-alt\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"text\" id=\"form8\" class=\"form-control\" formControlName=\"recipientname\">\r\n            <label for=\"form8\">Recipient's Name</label>\r\n            <mdb-error *ngIf=\"GetInputRecipientName.invalid && (GetInputRecipientName.dirty || GetInputRecipientName.touched)\">Name is required</mdb-error>\r\n          </div>\r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"envelope\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"email\" id=\"form8\" class=\"form-control\" formControlName=\"recipientemail\">\r\n            <label for=\"form8\">Recipient's Email Address</label>\r\n            <mdb-error *ngIf=\"GetInputRecipientEmail.invalid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)\">Email address is invalid</mdb-error>\r\n            <mdb-success *ngIf=\"GetInputRecipientEmail.valid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)\">Email address is valid</mdb-success>\r\n          </div>\r\n\r\n        \r\n        </mdb-card-body>\r\n\r\n      </mdb-card>\r\n    \r\n      <div>\r\n        <h4 class=\"font-weight-bold text-center\">Dedication</h4>\r\n    \r\n        <div class=\"form-group\">\r\n          <textarea class=\"form-control rounded-0\" mdbInput id=\"dedication\"\r\n            rows=\"3\" placeholder=\"Message\" formControlName=\"dedication\"></textarea>\r\n        </div>\r\n    \r\n        <button mdbBtn color=\"light-green\" block=\"true\" class=\"z-depth-0 my-4 waves-effect\"\r\n          mdbWavesEffect type=\"submit\" [disabled]=\"clickedFlag\" (click)=\"SubmitOrder()\">Purchase Order <mdb-icon fas icon=\"shopping-cart\"></mdb-icon></button></div>\r\n      \r\n      </form>\r\n    \r\n\r\n      \r\n    </div>\r\n\r\n\r\n<app-spinner></app-spinner>");
 
 /***/ }),
 
@@ -149,7 +260,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<mdb-navbar SideClass=\"navbar navbar-expand-lg navbar-dark red lighten-3\">\r\n\r\n    <mdb-navbar-brand>\r\n      <a class=\"navbar-brand\" href=\"#\">\r\n        <img src=\"https://bit.ly/305p5iH\" height=\"60\" class=\"d-inline-block align-top\" alt=\"\">\r\n      </a>\r\n    </mdb-navbar-brand>\r\n  \r\n    <mdb-icon fas icon=\"angle-left\" size=\"lg\" class=\"text-white mr-auto d-flex d-md-none align-self-center\"></mdb-icon>\r\n  \r\n    <links>\r\n  \r\n      <ul class=\"navbar-nav mr-auto\">\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect>Home<span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect (click)=\"goToPage('order')\">Order Now</a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect (click)=\"goToPage('vieworders')\">View Orders</a>\r\n        </li>\r\n        <li class=\"nav-item active\">\r\n            <a class=\"nav-link waves-light\" mdbWavesEffect>Order Form<span class=\"sr-only\">(current)</span></a>\r\n          </li>\r\n  \r\n      </ul>\r\n  \r\n      \r\n    </links>\r\n  \r\n  </mdb-navbar>");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<mdb-navbar SideClass=\"navbar navbar-expand-lg navbar-dark red lighten-3\">\r\n\r\n    <mdb-navbar-brand>\r\n      <a class=\"navbar-brand\" href=\"#\">\r\n        <img src=\"https://bit.ly/305p5iH\" height=\"60\" class=\"d-inline-block align-top\" alt=\"\">\r\n      </a>\r\n    </mdb-navbar-brand>\r\n  \r\n    <mdb-icon fas icon=\"angle-left\" size=\"lg\" class=\"text-white mr-auto d-flex d-md-none align-self-center\"></mdb-icon>\r\n  \r\n    <links>\r\n  \r\n      <ul class=\"navbar-nav mr-auto\">\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect (click)=\"goToPage('home')\">Home<span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect (click)=\"goToPage('order')\">Order Now</a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link waves-light\" mdbWavesEffect (click)=\"goToPage('vieworders')\">View Orders</a>\r\n        </li>\r\n        <li class=\"nav-item active\">\r\n            <a class=\"nav-link waves-light\" mdbWavesEffect>Order Form<span class=\"sr-only\">(current)</span></a>\r\n          </li>\r\n  \r\n      </ul>\r\n  \r\n      \r\n    </links>\r\n  \r\n  </mdb-navbar>");
 
 /***/ }),
 
@@ -315,7 +426,7 @@ let AppRoutingModule = class AppRoutingModule {
 };
 AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { useHash: true })],
         exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
     })
 ], AppRoutingModule);
@@ -364,32 +475,36 @@ AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-bootstrap-md */ "./node_modules/angular-bootstrap-md/__ivy_ngcc__/fesm2015/angular-bootstrap-md.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-/* harmony import */ var _core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./core/services/orderService/SelectVoucher.service */ "./src/app/core/services/orderService/SelectVoucher.service.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _home_home_header_home_header_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/home-header/home-header.component */ "./src/app/home/home-header/home-header.component.ts");
-/* harmony import */ var _home_details_panel_details_panel_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/details-panel/details-panel.component */ "./src/app/home/details-panel/details-panel.component.ts");
-/* harmony import */ var _order_order_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./order/order.component */ "./src/app/order/order.component.ts");
-/* harmony import */ var _vieworders_orderlist_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./vieworders/orderlist.component */ "./src/app/vieworders/orderlist.component.ts");
-/* harmony import */ var _order_order_header_order_header_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./order/order-header/order-header.component */ "./src/app/order/order-header/order-header.component.ts");
-/* harmony import */ var _order_order_items_order_items_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./order/order-items/order-items.component */ "./src/app/order/order-items/order-items.component.ts");
-/* harmony import */ var _vieworders_orderlist_header_orderlist_header_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./vieworders/orderlist-header/orderlist-header.component */ "./src/app/vieworders/orderlist-header/orderlist-header.component.ts");
-/* harmony import */ var _vieworders_orderlist_body_orderlist_table_orderlist_table_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./vieworders/orderlist-body/orderlist-table/orderlist-table.component */ "./src/app/vieworders/orderlist-body/orderlist-table/orderlist-table.component.ts");
-/* harmony import */ var _vieworders_orderlist_body_orderlist_body_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./vieworders/orderlist-body/orderlist-body.component */ "./src/app/vieworders/orderlist-body/orderlist-body.component.ts");
-/* harmony import */ var _vieworders_orderlist_body_orderlist_top_orderlist_top_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./vieworders/orderlist-body/orderlist-top/orderlist-top.component */ "./src/app/vieworders/orderlist-body/orderlist-top/orderlist-top.component.ts");
-/* harmony import */ var _order_order_items_order_selectmodal_order_selectmodal_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./order/order-items/order-selectmodal/order-selectmodal.component */ "./src/app/order/order-items/order-selectmodal/order-selectmodal.component.ts");
-/* harmony import */ var _order_order_header_order_cart_order_cart_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./order/order-header/order-cart/order-cart.component */ "./src/app/order/order-header/order-cart/order-cart.component.ts");
-/* harmony import */ var _orderform_orderform_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./orderform/orderform.component */ "./src/app/orderform/orderform.component.ts");
-/* harmony import */ var _orderform_orderform_header_orderform_header_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./orderform/orderform-header/orderform-header.component */ "./src/app/orderform/orderform-header/orderform-header.component.ts");
-/* harmony import */ var _orderform_orderform_body_orderform_body_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./orderform/orderform-body/orderform-body.component */ "./src/app/orderform/orderform-body/orderform-body.component.ts");
-/* harmony import */ var _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./spinner/spinner.component */ "./src/app/spinner/spinner.component.ts");
-/* harmony import */ var _core_http_interceptor_interceptor__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./core/http-interceptor/interceptor */ "./src/app/core/http-interceptor/interceptor.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-bootstrap-md */ "./node_modules/angular-bootstrap-md/__ivy_ngcc__/fesm2015/angular-bootstrap-md.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/animations.js");
+/* harmony import */ var _core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./core/services/orderService/SelectVoucher.service */ "./src/app/core/services/orderService/SelectVoucher.service.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _home_home_header_home_header_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./home/home-header/home-header.component */ "./src/app/home/home-header/home-header.component.ts");
+/* harmony import */ var _home_details_panel_details_panel_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./home/details-panel/details-panel.component */ "./src/app/home/details-panel/details-panel.component.ts");
+/* harmony import */ var _order_order_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./order/order.component */ "./src/app/order/order.component.ts");
+/* harmony import */ var _vieworders_orderlist_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./vieworders/orderlist.component */ "./src/app/vieworders/orderlist.component.ts");
+/* harmony import */ var _order_order_header_order_header_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./order/order-header/order-header.component */ "./src/app/order/order-header/order-header.component.ts");
+/* harmony import */ var _order_order_items_order_items_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./order/order-items/order-items.component */ "./src/app/order/order-items/order-items.component.ts");
+/* harmony import */ var _vieworders_orderlist_header_orderlist_header_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./vieworders/orderlist-header/orderlist-header.component */ "./src/app/vieworders/orderlist-header/orderlist-header.component.ts");
+/* harmony import */ var _vieworders_orderlist_body_orderlist_table_orderlist_table_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./vieworders/orderlist-body/orderlist-table/orderlist-table.component */ "./src/app/vieworders/orderlist-body/orderlist-table/orderlist-table.component.ts");
+/* harmony import */ var _vieworders_orderlist_body_orderlist_body_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./vieworders/orderlist-body/orderlist-body.component */ "./src/app/vieworders/orderlist-body/orderlist-body.component.ts");
+/* harmony import */ var _vieworders_orderlist_body_orderlist_top_orderlist_top_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./vieworders/orderlist-body/orderlist-top/orderlist-top.component */ "./src/app/vieworders/orderlist-body/orderlist-top/orderlist-top.component.ts");
+/* harmony import */ var _order_order_items_order_selectmodal_order_selectmodal_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./order/order-items/order-selectmodal/order-selectmodal.component */ "./src/app/order/order-items/order-selectmodal/order-selectmodal.component.ts");
+/* harmony import */ var _order_order_header_order_cart_order_cart_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./order/order-header/order-cart/order-cart.component */ "./src/app/order/order-header/order-cart/order-cart.component.ts");
+/* harmony import */ var _orderform_orderform_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./orderform/orderform.component */ "./src/app/orderform/orderform.component.ts");
+/* harmony import */ var _orderform_orderform_header_orderform_header_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./orderform/orderform-header/orderform-header.component */ "./src/app/orderform/orderform-header/orderform-header.component.ts");
+/* harmony import */ var _orderform_orderform_body_orderform_body_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./orderform/orderform-body/orderform-body.component */ "./src/app/orderform/orderform-body/orderform-body.component.ts");
+/* harmony import */ var _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./spinner/spinner.component */ "./src/app/spinner/spinner.component.ts");
+/* harmony import */ var _core_http_interceptor_interceptor__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./core/http-interceptor/interceptor */ "./src/app/core/http-interceptor/interceptor.ts");
+
+
 
 
 
@@ -420,37 +535,39 @@ __webpack_require__.r(__webpack_exports__);
 let AppModule = class AppModule {
 };
 AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
-            _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
-            _home_home_header_home_header_component__WEBPACK_IMPORTED_MODULE_10__["HeaderComponent"],
-            _home_details_panel_details_panel_component__WEBPACK_IMPORTED_MODULE_11__["DetailsPanelComponent"],
-            _order_order_component__WEBPACK_IMPORTED_MODULE_12__["OrderComponent"],
-            _vieworders_orderlist_component__WEBPACK_IMPORTED_MODULE_13__["OrderlistComponent"],
-            _order_order_header_order_header_component__WEBPACK_IMPORTED_MODULE_14__["OrderHeaderComponent"],
-            _order_order_items_order_items_component__WEBPACK_IMPORTED_MODULE_15__["OrderItemsComponent"],
-            _vieworders_orderlist_header_orderlist_header_component__WEBPACK_IMPORTED_MODULE_16__["OrderlistHeaderComponent"],
-            _vieworders_orderlist_body_orderlist_table_orderlist_table_component__WEBPACK_IMPORTED_MODULE_17__["OrderlistTableComponent"],
-            _vieworders_orderlist_body_orderlist_body_component__WEBPACK_IMPORTED_MODULE_18__["OrderlistBodyComponent"],
-            _vieworders_orderlist_body_orderlist_top_orderlist_top_component__WEBPACK_IMPORTED_MODULE_19__["OrderlistTopComponent"],
-            _order_order_items_order_selectmodal_order_selectmodal_component__WEBPACK_IMPORTED_MODULE_20__["OrderSelectmodalComponent"],
-            _order_order_header_order_cart_order_cart_component__WEBPACK_IMPORTED_MODULE_21__["OrderCartComponent"],
-            _orderform_orderform_component__WEBPACK_IMPORTED_MODULE_22__["OrderformComponent"],
-            _orderform_orderform_header_orderform_header_component__WEBPACK_IMPORTED_MODULE_23__["OrderformHeaderComponent"],
-            _orderform_orderform_body_orderform_body_component__WEBPACK_IMPORTED_MODULE_24__["OrderformBodyComponent"],
-            _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_25__["SpinnerComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
+            _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"],
+            _home_home_header_home_header_component__WEBPACK_IMPORTED_MODULE_12__["HeaderComponent"],
+            _home_details_panel_details_panel_component__WEBPACK_IMPORTED_MODULE_13__["DetailsPanelComponent"],
+            _order_order_component__WEBPACK_IMPORTED_MODULE_14__["OrderComponent"],
+            _vieworders_orderlist_component__WEBPACK_IMPORTED_MODULE_15__["OrderlistComponent"],
+            _order_order_header_order_header_component__WEBPACK_IMPORTED_MODULE_16__["OrderHeaderComponent"],
+            _order_order_items_order_items_component__WEBPACK_IMPORTED_MODULE_17__["OrderItemsComponent"],
+            _vieworders_orderlist_header_orderlist_header_component__WEBPACK_IMPORTED_MODULE_18__["OrderlistHeaderComponent"],
+            _vieworders_orderlist_body_orderlist_table_orderlist_table_component__WEBPACK_IMPORTED_MODULE_19__["OrderlistTableComponent"],
+            _vieworders_orderlist_body_orderlist_body_component__WEBPACK_IMPORTED_MODULE_20__["OrderlistBodyComponent"],
+            _vieworders_orderlist_body_orderlist_top_orderlist_top_component__WEBPACK_IMPORTED_MODULE_21__["OrderlistTopComponent"],
+            _order_order_items_order_selectmodal_order_selectmodal_component__WEBPACK_IMPORTED_MODULE_22__["OrderSelectmodalComponent"],
+            _order_order_header_order_cart_order_cart_component__WEBPACK_IMPORTED_MODULE_23__["OrderCartComponent"],
+            _orderform_orderform_component__WEBPACK_IMPORTED_MODULE_24__["OrderformComponent"],
+            _orderform_orderform_header_orderform_header_component__WEBPACK_IMPORTED_MODULE_25__["OrderformHeaderComponent"],
+            _orderform_orderform_body_orderform_body_component__WEBPACK_IMPORTED_MODULE_26__["OrderformBodyComponent"],
+            _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_27__["SpinnerComponent"]
         ],
         imports: [
-            angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MDBBootstrapModule"].forRoot(),
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"]
+            angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["MDBBootstrapModule"].forRoot(),
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"],
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_1__["ToastrModule"].forRoot()
         ],
-        providers: [_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_6__["DataService"], _core_http_interceptor_interceptor__WEBPACK_IMPORTED_MODULE_26__["httpInterceptProviders"]],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
+        providers: [_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_8__["DataService"], _core_http_interceptor_interceptor__WEBPACK_IMPORTED_MODULE_28__["httpInterceptProviders"]],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
     })
 ], AppModule);
 
@@ -514,18 +631,27 @@ CanShowConfirmationForm = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthHeaderInterceptor", function() { return AuthHeaderInterceptor; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-/* harmony import */ var _services_SpinnerService_spinner_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../services/SpinnerService/spinner.service */ "./src/app/core/services/SpinnerService/spinner.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _Voucher_Shop_Front_End_Frontend_Seed_src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../../../../../../Voucher-Shop-Front-End-/Frontend-Seed/src/app/core/services/orderService/SelectVoucher.service */ "../../../Voucher-Shop-Front-End-/Frontend-Seed/src/app/core/services/orderService/SelectVoucher.service.ts");
+/* harmony import */ var _services_SpinnerService_spinner_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../services/SpinnerService/spinner.service */ "./src/app/core/services/SpinnerService/spinner.service.ts");
+
+
+
 
 
 
 
 
 let AuthHeaderInterceptor = class AuthHeaderInterceptor {
-    constructor(spinnerService) {
+    constructor(spinnerService, _toastrService, router, _data) {
         this.spinnerService = spinnerService;
+        this._toastrService = _toastrService;
+        this.router = router;
+        this._data = _data;
     }
     intercept(request, next) {
         this.spinnerService.requestStarted();
@@ -533,21 +659,63 @@ let AuthHeaderInterceptor = class AuthHeaderInterceptor {
     }
     handler(next, request) {
         return next.handle(request)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(event => {
-            if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpResponse"]) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(event => {
+            if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpResponse"]) {
                 this.spinnerService.requestEnded();
+                if (event.status >= 200 && event.status <= 202) {
+                    this._data.resetService();
+                    this._toastrService.success('The order has been placed!', 'PURCHASE COMPLETED', {
+                        timeOut: 2000
+                    });
+                    setTimeout(() => {
+                        this.router.navigate(['home'])
+                            .then(() => {
+                            window.location.reload();
+                        });
+                    }, 1900);
+                }
             }
         }, (error) => {
             this.spinnerService.resetSpinner();
+            try {
+                if (error.status === 500) {
+                    this._data.resetService();
+                    this._toastrService.error("An error occured on the server's side. "
+                        + 'You may have entered an unrecognized service email', 'PURCHASE INCOMPLETE', {
+                        timeOut: 2000
+                    });
+                    setTimeout(() => {
+                        this.router.navigate(['order'])
+                            .then(() => {
+                            window.location.reload();
+                        });
+                    }, 1900);
+                }
+            }
+            catch (e) {
+                this._data.resetService();
+                this._toastrService.error(e, 'Error Occurred', {
+                    timeOut: 2000
+                });
+                setTimeout(() => {
+                    this.router.navigate(['order'])
+                        .then(() => {
+                        window.location.reload();
+                    });
+                }, 1900);
+            }
             throw error;
         }));
     }
 };
 AuthHeaderInterceptor.ctorParameters = () => [
-    { type: _services_SpinnerService_spinner_service__WEBPACK_IMPORTED_MODULE_4__["SpinnerService"] }
+    { type: _services_SpinnerService_spinner_service__WEBPACK_IMPORTED_MODULE_7__["SpinnerService"] },
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_1__["ToastrService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+    { type: _Voucher_Shop_Front_End_Frontend_Seed_src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_6__["DataService"] }
 ];
 AuthHeaderInterceptor = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
 ], AuthHeaderInterceptor);
 
 
@@ -653,7 +821,7 @@ let ApiService = class ApiService {
             RecipientEmail: recipientEmail.value,
             Dedication: dedication.value,
             TotalSpent: totalSpent
-        }).toPromise().then((data) => { });
+        }).toPromise().then((data) => { console.log(data); });
     }
 };
 ApiService.ctorParameters = () => [
@@ -1036,8 +1204,8 @@ let OrderHeaderComponent = class OrderHeaderComponent {
     ngOnInit() {
     }
     goToPage(pageName) {
-        this.router.navigate([`${pageName}`]);
         this._data.resetService();
+        this.router.navigate([`${pageName}`]);
     }
     openModal(event) {
         const modalRef = this.modalService.open(_order_cart_order_cart_component__WEBPACK_IMPORTED_MODULE_5__["OrderCartComponent"]);
@@ -1248,13 +1416,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderComponent", function() { return OrderComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
 
 
 let OrderComponent = class OrderComponent {
-    constructor() { }
+    constructor(router) {
+        this.router = router;
+        this.router.routeReuseStrategy.shouldReuseRoute = () => {
+            return false;
+        };
+    }
     ngOnInit() {
     }
 };
+OrderComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 OrderComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-order',
@@ -1291,11 +1469,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderformBodyComponent", function() { return OrderformBodyComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _core_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../core/services/api.service */ "./src/app/core/services/api.service.ts");
+/* harmony import */ var src_app_core_services_SpinnerService_spinner_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/core/services/SpinnerService/spinner.service */ "./src/app/core/services/SpinnerService/spinner.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/core/services/orderService/SelectVoucher.service */ "./src/app/core/services/orderService/SelectVoucher.service.ts");
+/* harmony import */ var _core_services_api_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../core/services/api.service */ "./src/app/core/services/api.service.ts");
+
 
 
 
@@ -1303,10 +1483,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let OrderformBodyComponent = class OrderformBodyComponent {
-    constructor(_data, _http, _apiCall) {
+    constructor(_data, _http, _apiCall, _spinnerService) {
         this._data = _data;
         this._http = _http;
         this._apiCall = _apiCall;
+        this._spinnerService = _spinnerService;
         this.clickedFlag = false;
     }
     ngOnInit() {
@@ -1341,7 +1522,8 @@ let OrderformBodyComponent = class OrderformBodyComponent {
 OrderformBodyComponent.ctorParameters = () => [
     { type: src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_5__["DataService"] },
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
-    { type: _core_services_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"] }
+    { type: _core_services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"] },
+    { type: src_app_core_services_SpinnerService_spinner_service__WEBPACK_IMPORTED_MODULE_1__["SpinnerService"] }
 ];
 OrderformBodyComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -1381,21 +1563,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/core/services/orderService/SelectVoucher.service */ "./src/app/core/services/orderService/SelectVoucher.service.ts");
+
 
 
 
 let OrderformHeaderComponent = class OrderformHeaderComponent {
-    constructor(router) {
+    constructor(router, _data) {
         this.router = router;
+        this._data = _data;
     }
     ngOnInit() {
     }
     goToPage(pageName) {
         this.router.navigate([`${pageName}`]);
+        this._data.resetService();
     }
 };
 OrderformHeaderComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] }
 ];
 OrderformHeaderComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1670,26 +1857,31 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderlistHeaderComponent", function() { return OrderlistHeaderComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/core/services/orderService/SelectVoucher.service */ "./src/app/core/services/orderService/SelectVoucher.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
 
 
 
 let OrderlistHeaderComponent = class OrderlistHeaderComponent {
-    constructor(router) {
+    constructor(router, _data) {
         this.router = router;
+        this._data = _data;
     }
     ngOnInit() {
     }
     goToPage(pageName) {
         this.router.navigate([`${pageName}`]);
+        this._data.resetService();
     }
 };
 OrderlistHeaderComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: src_app_core_services_orderService_SelectVoucher_service__WEBPACK_IMPORTED_MODULE_1__["DataService"] }
 ];
 OrderlistHeaderComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         selector: 'app-orderlist-header',
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./orderlist-header.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/vieworders/orderlist-header/orderlist-header.component.html")).default,
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./orderlist-header.component.scss */ "./src/app/vieworders/orderlist-header/orderlist-header.component.scss")).default]

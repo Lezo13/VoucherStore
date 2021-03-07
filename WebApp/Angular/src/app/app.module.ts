@@ -1,8 +1,10 @@
+import { ToastrModule } from 'ngx-toastr';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DataService } from './core/services/orderService/SelectVoucher.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -54,7 +56,9 @@ import { httpInterceptProviders } from './core/http-interceptor/interceptor';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [DataService, httpInterceptProviders],
   bootstrap: [AppComponent]

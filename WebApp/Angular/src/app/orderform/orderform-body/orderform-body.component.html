@@ -1,6 +1,6 @@
 <div class="panelForm--resize">
 
-    <form class="p-5" [formGroup]="validatingForm">
+    <form class="p-5" [formGroup]="validatingForm" (keydown.enter)="$event.preventDefault()">
 
       <mdb-card class="card--change">
         <mdb-card-header class="cardHeader--change text-center light-blue darken-1">Sender's Details</mdb-card-header>

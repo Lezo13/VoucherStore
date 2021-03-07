@@ -40,12 +40,40 @@
         {
             var result = new CreateCustomerResponse();
             var errors = Enumerable.Empty<string>() as ICollection<string>;
-            Console.WriteLine(request.SenderID.Equals(Guid.Empty));
             try
             {
+                var spec = new ValidSendEmailRequestSpecification();
+
+                if (spec.IsSatisfiedBy(request, ref errors))
+                {
+                    MailMessage mail = new MailMessage();
+                    SmtpClient smtpServer = new SmtpClient(SmtpData.SmtpServer.DecryptString());
+
+                    mail.From = new MailAddress(SmtpData.SmtpEmail.DecryptString());
+                    mail.Subject = $"[Xtra giftcard] Vouchers Ordered by {request.SenderName}";
+
+                    mail.Body = request.CreateOrderBody();
+                    mail.IsBodyHtml = true;
+
+                    mail.To.Add(request.RecipientEmail);
+
+                    smtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtpServer.Port = SmtpData.Port;
+                    smtpServer.UseDefaultCredentials = false;
+                    smtpServer.Credentials = new System.Net.NetworkCredential(SmtpData.SmtpEmail.DecryptString(), SmtpData.SmtpPassword.DecryptString());
+                    smtpServer.EnableSsl = true;
+
+                    await smtpServer.SendMailAsync(mail);
+                }
+                else
+                {
+                    //// Communicate Specification-added errors, and return appropriate error.
+                    result.SetError(Errors.CreateValidationError, errors);
+                }
+
                 //// Validate using Specification classes. You can leverage factories to inject
                 //// your specifications if it touches the database
-                var spec = new ValidSendEmailRequestSpecification();
+                
                 var emailEntity = request.AsEntity();
 
                 Guid senderID;
@@ -79,36 +107,7 @@
 
                 await this.ordersdataGateway.InsertOrdersAsync(emailEntity);
 
-                if (spec.IsSatisfiedBy(request, ref errors))
-                {
-                    MailMessage mail = new MailMessage();
-                    SmtpClient smtpServer = new SmtpClient(SmtpData.SmtpServer.DecryptString());
-
-                    mail.From = new MailAddress(SmtpData.SmtpEmail.DecryptString());
-                    mail.Subject = $"[Xtra giftcard] Vouchers Ordered by {request.SenderName}";
-
-                    mail.Body = request.CreateOrderBody();
-                    mail.IsBodyHtml = true;
-                    var copyMail1 = mail;
-                    var copyMail2 = mail;
-
-                    copyMail1.To.Add(request.RecipientEmail);
-                    copyMail2.To.Add(request.SenderEmail);
-
-                    smtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    smtpServer.Port = SmtpData.Port;
-                    smtpServer.UseDefaultCredentials = false;
-                    smtpServer.Credentials = new System.Net.NetworkCredential(SmtpData.SmtpEmail.DecryptString(), SmtpData.SmtpPassword.DecryptString());
-                    smtpServer.EnableSsl = true;
-
-                    await smtpServer.SendMailAsync(copyMail1);
-                    await smtpServer.SendMailAsync(copyMail2);
-                }
-                else
-                {
-                    //// Communicate Specification-added errors, and return appropriate error.
-                    result.SetError(Errors.CreateValidationError, errors);
-                }
+                
             }
             catch (Exception ex)
             {
