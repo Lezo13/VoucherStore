@@ -18,7 +18,8 @@
                 RecipientID = request.RecipientID,
                 RecipientEmail = request.RecipientEmail,
                 RecipientName = request.RecipientName,
-                Dedication = request.Dedication
+                Dedication = request.Dedication,
+                TotalSpent = request.TotalSpent
                 //// Assign all necessary fields e.g. when new fields are introduced
             };
             return result;

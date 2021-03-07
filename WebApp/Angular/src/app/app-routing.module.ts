@@ -23,13 +23,13 @@ const routes: Routes = [
   },
   {
     path: 'order/orderform',
-    component: OrderformComponent
-    // canActivate: [ CanShowConfirmationForm] FOR PREVENTION
+    component: OrderformComponent,
+    canActivate: [CanShowConfirmationForm] // FOR PREVENTION OF LOAD OR ACCESS
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'order/orderform'
+    redirectTo: 'home'
   }
 ];
 

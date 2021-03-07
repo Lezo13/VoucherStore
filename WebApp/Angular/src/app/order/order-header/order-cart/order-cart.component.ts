@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 import { DataService } from './../../../core/services/orderService/SelectVoucher.service';
 
@@ -14,7 +15,7 @@ export class OrderCartComponent implements OnInit {
 
   headers: Array<string> = ['#', 'Voucher Name', 'Quantity', 'Price', 'Amount'];
 
-  constructor(public activeModal: NgbActiveModal, private data: DataService) {
+  constructor(public activeModal: NgbActiveModal, private data: DataService, private router: Router) {
     this.rows = null;
     this.rows = [];
     let iterateNum: number = 0;
@@ -37,11 +38,9 @@ export class OrderCartComponent implements OnInit {
   }
 
   CheckOut(): void {
-    if (this.data.totalPrice === 0) {
-
-      // this.activeModal.close('Close click');
-    } else {
-
+    if (this.data.totalPrice !== 0) {
+      this.router.navigate(['order/orderform']);
+      this.activeModal.close('Close click');
     }
   }
 }

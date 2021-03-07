@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { DataService } from './core/services/orderService/SelectVoucher.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,8 +23,8 @@ import { OrderCartComponent } from './order/order-header/order-cart/order-cart.c
 import { OrderformComponent } from './orderform/orderform.component';
 import { OrderformHeaderComponent } from './orderform/orderform-header/orderform-header.component';
 import { OrderformBodyComponent } from './orderform/orderform-body/orderform-body.component';
-
-
+import { SpinnerComponent } from './spinner/spinner.component';
+import { httpInterceptProviders } from './core/http-interceptor/interceptor';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,8 @@ import { OrderformBodyComponent } from './orderform/orderform-body/orderform-bod
     OrderCartComponent,
     OrderformComponent,
     OrderformHeaderComponent,
-    OrderformBodyComponent
+    OrderformBodyComponent,
+    SpinnerComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
@@ -55,7 +56,7 @@ import { OrderformBodyComponent } from './orderform/orderform-body/orderform-bod
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [DataService],
+  providers: [DataService, httpInterceptProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

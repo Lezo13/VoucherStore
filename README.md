@@ -43,6 +43,5 @@ Purchase store vouchers and send as a gift to your relatives, friends, and etc.
 
 ## NOTES (so far)
 
-- #### `COMBINED front-end and back-end in 1 project`
-- #### `ADDED json sending to POST in orderform angular file/typescript file .ts`
-- #### `Able to place order and get an email from it`
+- #### `Added spinner load after submitting order form`
+- #### `Seperated smtp email delivery to 2 instance` (To avoid undelivered email)

@@ -1,9 +1,9 @@
+import { ApiService } from './../../core/services/api.service';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-
-import { AppComponent } from './../../app.component';
-import { stringify } from 'querystring';
 import { HttpClient } from '@angular/common/http';
+
+import { DataService } from 'src/app/core/services/orderService/SelectVoucher.service';
 
 @Component({
   selector: 'app-orderform-body',
@@ -15,7 +15,7 @@ export class OrderformBodyComponent implements OnInit {
   validatingForm: FormGroup;
   clickedFlag: Boolean = false;
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _data: DataService, private _http: HttpClient, private _apiCall: ApiService) { }
 
   ngOnInit(): void {
     this.validatingForm = new FormGroup({
@@ -39,26 +39,13 @@ export class OrderformBodyComponent implements OnInit {
   const recipientName: AbstractControl = this.validatingForm.get('recipientname');
   const recipientEmail: AbstractControl = this.validatingForm.get('recipientemail');
   const dedication: AbstractControl = this.validatingForm.get('dedication');
+  const totalSpent: number = this._data.totalPrice;
 
- 
   if (senderName.valid && senderEmail.valid && recipientName.valid && recipientEmail) {
+
     this.clickedFlag = true;
-
-    const url: string = 'api/place_order';
-
-    this._http.post(url, {
-      SenderName: senderName.value,
-      SenderEmail: senderEmail.value,
-      RecipientName: recipientName.value,
-      RecipientEmail: recipientEmail.value,
-      Dedication: dedication.value
-    }).toPromise().then((data: any) => {
-      console.log(data);
-    });
-
-  }
-
-  else {
+    this._apiCall.placeOrder(senderName, senderEmail, recipientName, recipientEmail, dedication, totalSpent);
+    } else {
     this.validatingForm.markAllAsTouched();
     }
   }

@@ -16,9 +16,8 @@ export class CanShowConfirmationForm implements CanActivate {
     }
 
     checkOrderPage(url: string): boolean {
-        if (this.router.url === '/orderform') {
+        if (this.router.url === '/order')
             return true;
-        }
         alert('Cannot access this site!');
         this.router.navigate(['home']);
         return false;

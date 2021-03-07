@@ -85,12 +85,15 @@
                     SmtpClient smtpServer = new SmtpClient(SmtpData.SmtpServer.DecryptString());
 
                     mail.From = new MailAddress(SmtpData.SmtpEmail.DecryptString());
-                    mail.To.Add(request.RecipientEmail);
-                    mail.To.Add(request.SenderEmail);
                     mail.Subject = $"[Xtra giftcard] Vouchers Ordered by {request.SenderName}";
 
                     mail.Body = request.CreateOrderBody();
                     mail.IsBodyHtml = true;
+                    var copyMail1 = mail;
+                    var copyMail2 = mail;
+
+                    copyMail1.To.Add(request.RecipientEmail);
+                    copyMail2.To.Add(request.SenderEmail);
 
                     smtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
                     smtpServer.Port = SmtpData.Port;
@@ -98,7 +101,8 @@
                     smtpServer.Credentials = new System.Net.NetworkCredential(SmtpData.SmtpEmail.DecryptString(), SmtpData.SmtpPassword.DecryptString());
                     smtpServer.EnableSsl = true;
 
-                    await smtpServer.SendMailAsync(mail);
+                    await smtpServer.SendMailAsync(copyMail1);
+                    await smtpServer.SendMailAsync(copyMail2);
                 }
                 else
                 {
