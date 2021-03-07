@@ -1,4 +1,4 @@
-[![Build Status](https://i.imgur.com/hkcb8ZQ.png)]
+![Xtra giftcard](https://i.imgur.com/JYE6DdB.png)
 
 # Vouchers Store 
 ## by Kent Gentilezo
