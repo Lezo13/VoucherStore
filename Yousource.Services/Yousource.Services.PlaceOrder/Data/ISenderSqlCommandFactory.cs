@@ -1,7 +1,7 @@
-﻿namespace Yousource.Services.MailSender.Data
+﻿namespace Yousource.Services.PlaceOrder.Data
 {
     using System.Data.SqlClient;
-    using Yousource.Services.MailSender.Data.Entities;
+    using Yousource.Services.PlaceOrder.Data.Entities;
 
     public interface ISenderSqlCommandFactory
     {

@@ -1,10 +1,10 @@
-﻿namespace Yousource.Services.MailSender.Extensions
+﻿namespace Yousource.Services.PlaceOrder.Extensions
 {
     using System.Collections.Generic;
     using System.Linq;
     using Yousource.Infrastructure.Messages.Customers.Requests;
     using Yousource.Infrastructure.Models.Customers;
-    using Yousource.Services.MailSender.Data.Entities;
+    using Yousource.Services.PlaceOrder.Data.Entities;
 
     public static class OrderExtensions
     {

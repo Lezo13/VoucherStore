@@ -1,4 +1,4 @@
-﻿namespace Yousource.Services.MailSender.Data.Entities
+﻿namespace Yousource.Services.PlaceOrder.Data.Entities
 {
     using System;
     using System.Collections.Generic;

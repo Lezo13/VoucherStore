@@ -1,9 +1,9 @@
-﻿namespace Yousource.Services.MailSender.Extensions
+﻿namespace Yousource.Services.PlaceOrder.Extensions
 {
     using System;
     using System.Collections.Generic;
     using Yousource.Infrastructure.Messages.Customers.Requests;
-    using Yousource.Services.MailSender.Data.Entities;
+    using Yousource.Services.PlaceOrder.Data.Entities;
 
     public static class StringExtensions
     {

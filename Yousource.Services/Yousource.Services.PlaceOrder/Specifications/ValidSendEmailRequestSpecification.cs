@@ -1,4 +1,4 @@
-﻿namespace Yousource.Services.MailSender.Specifications
+﻿namespace Yousource.Services.PlaceOrder.Specifications
 {
     using System.Collections.Generic;
     using Yousource.Infrastructure.Messages.Customers.Requests;

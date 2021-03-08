@@ -1,4 +1,4 @@
-﻿namespace Yousource.Services.MailSender.Constants
+﻿namespace Yousource.Services.PlaceOrder.Constants
 {
     public class SmtpData
     {

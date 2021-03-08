@@ -1,8 +1,8 @@
-﻿namespace Yousource.Services.MailSender.Data
+﻿namespace Yousource.Services.PlaceOrder.Data
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Yousource.Services.MailSender.Data.Entities;
+    using Yousource.Services.PlaceOrder.Data.Entities;
 
     public interface IOrdersDataGateway
     {

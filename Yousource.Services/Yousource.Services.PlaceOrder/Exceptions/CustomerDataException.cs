@@ -1,4 +1,4 @@
-﻿namespace Yousource.Services.MailSender.Exceptions
+﻿namespace Yousource.Services.PlaceOrder.Exceptions
 {
     using System;
 

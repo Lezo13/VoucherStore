@@ -3,8 +3,8 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Yousource.Infrastructure.Interfaces;
-    using Yousource.Services.MailSender;
-    using Yousource.Services.MailSender.Data;
+    using Yousource.Services.PlaceOrder;
+    using Yousource.Services.PlaceOrder.Data;
 
     public static class PlaceOrderServices
     {

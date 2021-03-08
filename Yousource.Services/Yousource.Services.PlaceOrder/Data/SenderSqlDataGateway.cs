@@ -1,4 +1,4 @@
-﻿namespace Yousource.Services.MailSender.Data
+﻿namespace Yousource.Services.PlaceOrder.Data
 {
     using System.Collections.Generic;
     using System.Data.Common;
@@ -6,8 +6,8 @@
     using System.Threading.Tasks;
     using Yousource.Infrastructure.Helpers;
     using Yousource.Infrastructure.Logging;
-    using Yousource.Services.MailSender.Data.Entities;
-    using Yousource.Services.MailSender.Exceptions;
+    using Yousource.Services.PlaceOrder.Data.Entities;
+    using Yousource.Services.PlaceOrder.Exceptions;
 
     //// Data access class
     public class SenderSqlDataGateway : ISenderDataGateway

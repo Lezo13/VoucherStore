@@ -15,7 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Yousource.Infrastructure\Yousource.Infrastructure.csproj" />
     <ProjectReference Include="..\Yousource.Services\Yousource.Services.DisplayOrder\Yousource.Services.DisplayOrder.csproj" />
-    <ProjectReference Include="..\Yousource.Services\Yousource.Services.MailSender\Yousource.Services.PlaceOrder.csproj" />
+    <ProjectReference Include="..\Yousource.Services\Yousource.Services.PlaceOrder\Yousource.Services.PlaceOrder.csproj" />
   </ItemGroup>
 
 </Project>

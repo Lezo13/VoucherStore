@@ -1,4 +1,4 @@
-﻿namespace Yousource.Services.MailSender
+﻿namespace Yousource.Services.PlaceOrder
 {
     using System;
     using System.Collections.Generic;
@@ -9,11 +9,11 @@
     using Yousource.Infrastructure.Logging;
     using Yousource.Infrastructure.Messages.Customers.Requests;
     using Yousource.Infrastructure.Messages.Customers.Responses;
-    using Yousource.Services.MailSender.Constants;
-    using Yousource.Services.MailSender.Data;
-    using Yousource.Services.MailSender.Exceptions;
-    using Yousource.Services.MailSender.Extensions;
-    using Yousource.Services.MailSender.Specifications;
+    using Yousource.Services.PlaceOrder.Constants;
+    using Yousource.Services.PlaceOrder.Data;
+    using Yousource.Services.PlaceOrder.Exceptions;
+    using Yousource.Services.PlaceOrder.Extensions;
+    using Yousource.Services.PlaceOrder.Specifications;
 
     //// Service typically executes the operations needed e.g. CRUD.
     public class PlaceOrderService : IEmailService
