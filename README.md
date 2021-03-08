@@ -20,8 +20,9 @@ Purchase store vouchers and send as a gift to your relatives, friends, and etc.
 ## DESIGNS (so far)
 - HOME PAGE 
 - ORDER PAGE
-- ORDER LIST page
-- ORDER FORM PAGE
+- ORDERS FORM PAGE
+- FIND ORDERS page
+
 
 ## Features (so far)
 
@@ -40,8 +41,3 @@ Purchase store vouchers and send as a gift to your relatives, friends, and etc.
 - #### 4.5) Type `ng build` (Optional: if you dont have the dist/output folder of the angular project yet)
 - #### 5.) `Open Microsoft VIsual Studio 2019 or any`
 - #### 6.) `Run the project!`
-
-## NOTES (so far)
-
-- #### Fixed Diplay Order API there were missing orderNo not set
-- #### Able to fetch data from server to front end (Displaying to table needed)
