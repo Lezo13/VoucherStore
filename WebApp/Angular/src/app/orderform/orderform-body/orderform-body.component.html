@@ -8,14 +8,14 @@
           
           <div class="md-form">
             <mdb-icon fas icon="user-alt" class="prefix"></mdb-icon>
-            <input mdbInput mdbValidate type="text" id="form8" class="form-control" formControlName="sendername">
+            <input mdbInput mdbValidate type="text" class="form-control" formControlName="sendername">
             <label for="form8">Sender's Name</label>
             <mdb-error *ngIf="GetInputSenderName.invalid && (GetInputSenderName.dirty || GetInputSenderName.touched)">Name is required</mdb-error>
           </div>
         
           <div class="md-form">
             <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
-            <input mdbInput mdbValidate type="email" id="form8" class="form-control" formControlName="senderemail">
+            <input mdbInput mdbValidate type="email" class="form-control" formControlName="senderemail">
             <label for="form8">Sender's Email Address</label>
             <mdb-error *ngIf="GetInputSenderEmail.invalid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)">Email address is invalid</mdb-error>
             <mdb-success *ngIf="GetInputSenderEmail.valid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)">Email address is valid</mdb-success>
@@ -31,13 +31,13 @@
           
           <div class="md-form">
             <mdb-icon fas icon="user-alt" class="prefix"></mdb-icon>
-            <input mdbInput mdbValidate type="text" id="form8" class="form-control" formControlName="recipientname">
+            <input mdbInput mdbValidate type="text" class="form-control" formControlName="recipientname">
             <label for="form8">Recipient's Name</label>
             <mdb-error *ngIf="GetInputRecipientName.invalid && (GetInputRecipientName.dirty || GetInputRecipientName.touched)">Name is required</mdb-error>
           </div>
           <div class="md-form">
             <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
-            <input mdbInput mdbValidate type="email" id="form8" class="form-control" formControlName="recipientemail">
+            <input mdbInput mdbValidate type="email" class="form-control" formControlName="recipientemail">
             <label for="form8">Recipient's Email Address</label>
             <mdb-error *ngIf="GetInputRecipientEmail.invalid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)">Email address is invalid</mdb-error>
             <mdb-success *ngIf="GetInputRecipientEmail.valid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)">Email address is valid</mdb-success>

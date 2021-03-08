@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"panelForm--resize\">\r\n\r\n    <form class=\"p-5\" [formGroup]=\"validatingForm\" (keydown.enter)=\"$event.preventDefault()\">\r\n\r\n      <mdb-card class=\"card--change\">\r\n        <mdb-card-header class=\"cardHeader--change text-center light-blue darken-1\">Sender's Details</mdb-card-header>\r\n        <mdb-card-body class=\"light-blue lighten-4\">  \r\n          \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"user-alt\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"text\" id=\"form8\" class=\"form-control\" formControlName=\"sendername\">\r\n            <label for=\"form8\">Sender's Name</label>\r\n            <mdb-error *ngIf=\"GetInputSenderName.invalid && (GetInputSenderName.dirty || GetInputSenderName.touched)\">Name is required</mdb-error>\r\n          </div>\r\n        \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"envelope\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"email\" id=\"form8\" class=\"form-control\" formControlName=\"senderemail\">\r\n            <label for=\"form8\">Sender's Email Address</label>\r\n            <mdb-error *ngIf=\"GetInputSenderEmail.invalid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)\">Email address is invalid</mdb-error>\r\n            <mdb-success *ngIf=\"GetInputSenderEmail.valid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)\">Email address is valid</mdb-success>\r\n          </div>\r\n      \r\n        </mdb-card-body>\r\n      </mdb-card>\r\n    \r\n      <mdb-card class=\"card--change\">\r\n        <mdb-card-header class=\"cardHeader--change text-center green accent-3\">Recipient's Details</mdb-card-header>\r\n\r\n        <mdb-card-body class=\"green accent-1\">\r\n          \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"user-alt\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"text\" id=\"form8\" class=\"form-control\" formControlName=\"recipientname\">\r\n            <label for=\"form8\">Recipient's Name</label>\r\n            <mdb-error *ngIf=\"GetInputRecipientName.invalid && (GetInputRecipientName.dirty || GetInputRecipientName.touched)\">Name is required</mdb-error>\r\n          </div>\r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"envelope\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"email\" id=\"form8\" class=\"form-control\" formControlName=\"recipientemail\">\r\n            <label for=\"form8\">Recipient's Email Address</label>\r\n            <mdb-error *ngIf=\"GetInputRecipientEmail.invalid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)\">Email address is invalid</mdb-error>\r\n            <mdb-success *ngIf=\"GetInputRecipientEmail.valid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)\">Email address is valid</mdb-success>\r\n          </div>\r\n\r\n        \r\n        </mdb-card-body>\r\n\r\n      </mdb-card>\r\n    \r\n      <div>\r\n        <h4 class=\"font-weight-bold text-center\">Dedication</h4>\r\n    \r\n        <div class=\"form-group\">\r\n          <textarea class=\"form-control rounded-0\" mdbInput id=\"dedication\"\r\n            rows=\"3\" placeholder=\"Message\" formControlName=\"dedication\"></textarea>\r\n        </div>\r\n    \r\n        <button mdbBtn color=\"light-green\" block=\"true\" class=\"z-depth-0 my-4 waves-effect\"\r\n          mdbWavesEffect type=\"submit\" [disabled]=\"clickedFlag\" (click)=\"SubmitOrder()\">Purchase Order <mdb-icon fas icon=\"shopping-cart\"></mdb-icon></button></div>\r\n      \r\n      </form>\r\n    \r\n\r\n      \r\n    </div>\r\n\r\n\r\n<app-spinner></app-spinner>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"panelForm--resize\">\r\n\r\n    <form class=\"p-5\" [formGroup]=\"validatingForm\" (keydown.enter)=\"$event.preventDefault()\">\r\n\r\n      <mdb-card class=\"card--change\">\r\n        <mdb-card-header class=\"cardHeader--change text-center light-blue darken-1\">Sender's Details</mdb-card-header>\r\n        <mdb-card-body class=\"light-blue lighten-4\">  \r\n          \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"user-alt\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"text\" class=\"form-control\" formControlName=\"sendername\">\r\n            <label for=\"form8\">Sender's Name</label>\r\n            <mdb-error *ngIf=\"GetInputSenderName.invalid && (GetInputSenderName.dirty || GetInputSenderName.touched)\">Name is required</mdb-error>\r\n          </div>\r\n        \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"envelope\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"email\" class=\"form-control\" formControlName=\"senderemail\">\r\n            <label for=\"form8\">Sender's Email Address</label>\r\n            <mdb-error *ngIf=\"GetInputSenderEmail.invalid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)\">Email address is invalid</mdb-error>\r\n            <mdb-success *ngIf=\"GetInputSenderEmail.valid && (GetInputSenderEmail.dirty || GetInputSenderEmail.touched)\">Email address is valid</mdb-success>\r\n          </div>\r\n      \r\n        </mdb-card-body>\r\n      </mdb-card>\r\n    \r\n      <mdb-card class=\"card--change\">\r\n        <mdb-card-header class=\"cardHeader--change text-center green accent-3\">Recipient's Details</mdb-card-header>\r\n\r\n        <mdb-card-body class=\"green accent-1\">\r\n          \r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"user-alt\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"text\" class=\"form-control\" formControlName=\"recipientname\">\r\n            <label for=\"form8\">Recipient's Name</label>\r\n            <mdb-error *ngIf=\"GetInputRecipientName.invalid && (GetInputRecipientName.dirty || GetInputRecipientName.touched)\">Name is required</mdb-error>\r\n          </div>\r\n          <div class=\"md-form\">\r\n            <mdb-icon fas icon=\"envelope\" class=\"prefix\"></mdb-icon>\r\n            <input mdbInput mdbValidate type=\"email\" class=\"form-control\" formControlName=\"recipientemail\">\r\n            <label for=\"form8\">Recipient's Email Address</label>\r\n            <mdb-error *ngIf=\"GetInputRecipientEmail.invalid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)\">Email address is invalid</mdb-error>\r\n            <mdb-success *ngIf=\"GetInputRecipientEmail.valid && (GetInputRecipientEmail.dirty || GetInputRecipientEmail.touched)\">Email address is valid</mdb-success>\r\n          </div>\r\n\r\n        \r\n        </mdb-card-body>\r\n\r\n      </mdb-card>\r\n    \r\n      <div>\r\n        <h4 class=\"font-weight-bold text-center\">Dedication</h4>\r\n    \r\n        <div class=\"form-group\">\r\n          <textarea class=\"form-control rounded-0\" mdbInput id=\"dedication\"\r\n            rows=\"3\" placeholder=\"Message\" formControlName=\"dedication\"></textarea>\r\n        </div>\r\n    \r\n        <button mdbBtn color=\"light-green\" block=\"true\" class=\"z-depth-0 my-4 waves-effect\"\r\n          mdbWavesEffect type=\"submit\" [disabled]=\"clickedFlag\" (click)=\"SubmitOrder()\">Purchase Order <mdb-icon fas icon=\"shopping-cart\"></mdb-icon></button></div>\r\n      \r\n      </form>\r\n    \r\n\r\n      \r\n    </div>\r\n\r\n\r\n<app-spinner></app-spinner>");
 
 /***/ }),
 
@@ -201,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"green lighten-4\">\r\n  <table mdbTable>\r\n  <thead class=\"black white-text\">\r\n    <tr>\r\n      <th *ngFor=\"let column of headers\" scope=\"col\" class=\"th--bold\">\r\n        {{column}}\r\n    </tr> \r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let row of rows\">\r\n      <td *ngFor=\"let column of headers\">{{row[column]}}</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n  \r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"green lighten-4\">\r\n  <table mdbTable>\r\n  <thead class=\"black white-text\">\r\n    <tr>\r\n      <th *ngFor=\"let column of headers\" scope=\"col\" class=\"th--bold\">\r\n        {{column}}\r\n        </th>\r\n    </tr> \r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let row of _data.rows\">\r\n      <td *ngFor=\"let column of headers\">{{row[column]}}</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n  \r\n</div>");
 
 /***/ }),
 
@@ -542,13 +542,14 @@ let AuthHeaderInterceptor = class AuthHeaderInterceptor {
         this.router = router;
         this._data = _data;
     }
+    // tslint:disable-next-line: no-any
     intercept(request, next) {
-        console.log(request);
         if (request.url === 'api/place_order') {
             this.spinnerService.requestStarted();
         }
         return this.handler(next, request);
     }
+    // tslint:disable-next-line: no-any
     handler(next, request) {
         return next.handle(request)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(event => {
@@ -637,6 +638,42 @@ const httpInterceptProviders = [
 
 /***/ }),
 
+/***/ "./src/app/core/services/FindOrdersService/findorders.service.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/core/services/FindOrdersService/findorders.service.ts ***!
+  \***********************************************************************/
+/*! exports provided: FindOrdersService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FindOrdersService", function() { return FindOrdersService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+
+let FindOrdersService = class FindOrdersService {
+    constructor() {
+        this.rows = [];
+        this.messageSource = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]('default message');
+        this.currentMessage = this.messageSource.asObservable();
+    }
+    changeMessage(message) {
+        this.messageSource.next(message);
+    }
+};
+FindOrdersService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+        providedIn: 'root'
+    })
+], FindOrdersService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/core/services/SpinnerService/spinner.service.ts":
 /*!*****************************************************************!*\
   !*** ./src/app/core/services/SpinnerService/spinner.service.ts ***!
@@ -718,17 +755,29 @@ let ApiService = class ApiService {
             RecipientEmail: recipientEmail.value,
             Dedication: dedication.value,
             TotalSpent: totalSpent
-        }).toPromise().then((data) => { console.log(data); });
+        }).toPromise();
     }
     getOrders(senderEmail) {
-        const url = 'api/display_order';
-        var result = [];
-        this._http.post(url, { SenderEmail: senderEmail }).toPromise().then((data) => {
-            data.data.forEach(element => {
-                result.push(element);
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const url = 'api/display_order';
+            const result = new Array();
+            yield this._http.post(url, { SenderEmail: senderEmail }).toPromise().then((data) => {
+                data.data.forEach(element => {
+                    const record = {
+                        orderDate: element.orderDate,
+                        orderNo: element.orderNo,
+                        totalSpent: element.totalSpent,
+                        senderEmail: element.senderEmail,
+                        senderName: element.senderName,
+                        recipientEmail: element.recipientEmail,
+                        recipientName: element.recipientName,
+                        dedication: element.dedication
+                    };
+                    result.push(record);
+                });
             });
+            return result;
         });
-        return result;
     }
 };
 ApiService.ctorParameters = () => [
@@ -1661,7 +1710,7 @@ OrderlistBodyComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdvcmRlcnMvb3JkZXJsaXN0LWJvZHkvb3JkZXJsaXN0LXRhYmxlL29yZGVybGlzdC10YWJsZS5jb21wb25lbnQuc2NzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = (".th--bold {\n  font-weight: bold;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld29yZGVycy9vcmRlcmxpc3QtYm9keS9vcmRlcmxpc3QtdGFibGUvRDpcXFVzZXJzXFxMZXpvV29ya1xcRG9jdW1lbnRzXFxHaXRIdWJcXE9uQm9hcmRUcmFpbmluZ1xcVm91Y2hlclN0b3JlXFxXZWJBcHBcXEFuZ3VsYXIvc3JjXFxhcHBcXHZpZXdvcmRlcnNcXG9yZGVybGlzdC1ib2R5XFxvcmRlcmxpc3QtdGFibGVcXG9yZGVybGlzdC10YWJsZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvdmlld29yZGVycy9vcmRlcmxpc3QtYm9keS9vcmRlcmxpc3QtdGFibGUvb3JkZXJsaXN0LXRhYmxlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUksaUJBQUE7QUNBSiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdvcmRlcnMvb3JkZXJsaXN0LWJvZHkvb3JkZXJsaXN0LXRhYmxlL29yZGVybGlzdC10YWJsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50aC0tYm9sZFxyXG57XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuXHJcbn0iLCIudGgtLWJvbGQge1xuICBmb250LXdlaWdodDogYm9sZDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -1676,23 +1725,25 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderlistTableComponent", function() { return OrderlistTableComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var src_app_core_services_FindOrdersService_findorders_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/core/services/FindOrdersService/findorders.service */ "./src/app/core/services/FindOrdersService/findorders.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
 
 
 let OrderlistTableComponent = class OrderlistTableComponent {
-    constructor() {
-        this.rows = [];
-        this.headers = ['#', 'Order Date', 'Total Spent', 'Sender Email', 'Sender Name',
-            'Recipient Email', 'Recipient Name', 'Dedication'];
-        this.rows = null;
-        this.rows = [];
-        let iterateNum = 0;
+    constructor(_data) {
+        this._data = _data;
+        this.headers = ['#', 'Date Ordered', 'Order #', 'Total Spent',
+            'Sender Email', 'Sender Name', 'Recipient Email', 'Recipient Name', 'Dedication'];
     }
     ngOnInit() {
     }
 };
+OrderlistTableComponent.ctorParameters = () => [
+    { type: src_app_core_services_FindOrdersService_findorders_service__WEBPACK_IMPORTED_MODULE_1__["FindOrdersService"] }
+];
 OrderlistTableComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         selector: 'app-orderlist-table',
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./orderlist-table.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/vieworders/orderlist-body/orderlist-table/orderlist-table.component.html")).default,
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./orderlist-table.component.scss */ "./src/app/vieworders/orderlist-body/orderlist-table/orderlist-table.component.scss")).default]
@@ -1727,28 +1778,52 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderlistTopComponent", function() { return OrderlistTopComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var src_app_core_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/core/services/api.service */ "./src/app/core/services/api.service.ts");
+/* harmony import */ var src_app_core_services_FindOrdersService_findorders_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/core/services/FindOrdersService/findorders.service */ "./src/app/core/services/FindOrdersService/findorders.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var src_app_core_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/core/services/api.service */ "./src/app/core/services/api.service.ts");
+
 
 
 
 let OrderlistTopComponent = class OrderlistTopComponent {
-    constructor(_apiCall) {
+    constructor(_apiCall, _data) {
         this._apiCall = _apiCall;
+        this._data = _data;
     }
     ngOnInit() {
     }
+    // tslint:disable-next-line: typedef
     SearchOrders(inputEmail) {
-        console.log(inputEmail);
-        var data = this._apiCall.getOrders(inputEmail);
-        console.log(data);
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            // tslint:disable-next-line: typedef
+            const ordersData = yield this._apiCall.getOrders(inputEmail);
+            let iterateNum = 0;
+            this._data.rows = null;
+            this._data.rows = [];
+            ordersData.forEach(element => {
+                iterateNum += 1;
+                const feedData = {
+                    '#': iterateNum,
+                    'Date Ordered': element.orderDate,
+                    'Order #': element.orderNo,
+                    'Total Spent': element.totalSpent,
+                    'Sender Email': element.senderEmail,
+                    'Sender Name': element.senderName,
+                    'Recipient Email': element.recipientEmail,
+                    'Recipient Name': element.recipientName,
+                    Dedication: element.dedication
+                };
+                this._data.rows.push(feedData);
+            });
+        });
     }
 };
 OrderlistTopComponent.ctorParameters = () => [
-    { type: src_app_core_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"] }
+    { type: src_app_core_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"] },
+    { type: src_app_core_services_FindOrdersService_findorders_service__WEBPACK_IMPORTED_MODULE_1__["FindOrdersService"] }
 ];
 OrderlistTopComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         selector: 'app-orderlist-top',
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./orderlist-top.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/vieworders/orderlist-body/orderlist-top/orderlist-top.component.html")).default,
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./orderlist-top.component.scss */ "./src/app/vieworders/orderlist-body/orderlist-top/orderlist-top.component.scss")).default]

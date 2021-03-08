@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/core/services/orderService/SelectVoucher.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -11,7 +11,6 @@ import { OrderCartComponent } from './order-cart/order-cart.component';
   styleUrls: ['./order-header.component.scss']
 })
 export class OrderHeaderComponent implements OnInit {
-
   ngOnInit(): void {
   }
 

@@ -4,10 +4,11 @@
     <tr>
       <th *ngFor="let column of headers" scope="col" class="th--bold">
         {{column}}
+        </th>
     </tr> 
   </thead>
   <tbody>
-    <tr *ngFor="let row of rows">
+    <tr *ngFor="let row of _data.rows">
       <td *ngFor="let column of headers">{{row[column]}}</td>
       </tr>
     </tbody>

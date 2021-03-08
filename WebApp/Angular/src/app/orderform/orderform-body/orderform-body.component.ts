@@ -1,7 +1,7 @@
 import { SpinnerService } from 'src/app/core/services/SpinnerService/spinner.service';
 import { ToastrService } from 'ngx-toastr';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from 'src/app/core/services/orderService/SelectVoucher.service';
 
@@ -16,7 +16,7 @@ import { ApiService } from './../../core/services/api.service';
 export class OrderformBodyComponent implements OnInit {
   validatingForm: FormGroup;
   clickedFlag: Boolean = false;
-  
+
   constructor(private _data: DataService, private _http: HttpClient, private _apiCall: ApiService, private _spinnerService: SpinnerService) {}
 
   ngOnInit(): void {
@@ -27,8 +27,7 @@ export class OrderformBodyComponent implements OnInit {
       recipientemail: new FormControl(null, [Validators.required, Validators.email]),
       dedication: new FormControl(null, [])
     });
-    
-    
+
   }
 
   get GetInputSenderName(): AbstractControl {return this.validatingForm.get('sendername'); }

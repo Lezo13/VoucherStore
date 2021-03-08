@@ -1,9 +1,10 @@
 import { ToastrService } from 'ngx-toastr';
 import { Injectable } from '@angular/core';
-import { HttpErrorResponse, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/core/services/orderService/SelectVoucher.service';
+import { Observable } from 'rxjs';
 
 import { SpinnerService } from './../services/SpinnerService/spinner.service';
 
@@ -12,8 +13,8 @@ export class AuthHeaderInterceptor implements HttpInterceptor {
     constructor(private spinnerService: SpinnerService, private _toastrService: ToastrService, private router: Router,
     private _data: DataService) {}
 
-    intercept(request: HttpRequest<any>, next: HttpHandler) {
-        console.log(request);
+    // tslint:disable-next-line: no-any
+    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (request.url === 'api/place_order') {
         this.spinnerService.requestStarted();
 
@@ -21,7 +22,8 @@ export class AuthHeaderInterceptor implements HttpInterceptor {
         return this.handler(next, request);
     }
 
-    handler(next, request) {
+    // tslint:disable-next-line: no-any
+    handler(next: HttpHandler, request: HttpRequest<any>): Observable<HttpEvent<any>> {
         return next.handle(request)
         .pipe(
             tap(
@@ -36,7 +38,6 @@ export class AuthHeaderInterceptor implements HttpInterceptor {
                             .then(() => {
                                 window.location.reload();
                             }); }, 1900);
-
 
                         }
 
@@ -55,7 +56,6 @@ export class AuthHeaderInterceptor implements HttpInterceptor {
                             .then(() => {
                                 window.location.reload();
                             }); }, 1900);
-
 
                         }
 
