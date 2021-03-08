@@ -29,8 +29,8 @@ Purchase store vouchers and send as a gift to your relatives, friends, and etc.
 - Login
 - Register
 - Email Service
-- Place Order (COMPLETE WITH TOAST AND SPINNER)
-- Display Order (INCOMPLETE)
+- Place Order
+- Display Order
 
 ## HOW TO RUN?
 
