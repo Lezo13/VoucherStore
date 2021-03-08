@@ -46,7 +46,6 @@
                     //// Decouple Service Models from Shared models i.e. Create `AsEntity` extension to convert vice-versa
                     result.Data = (await this.dataGateway.DisplayOrdersAsync(request.AsEntity())).AsModel();
                 }
-
             }
             catch (Exception ex)
             {

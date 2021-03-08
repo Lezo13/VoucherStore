@@ -29,7 +29,6 @@
                 errors.Add("Recipient Name is required");
             }
 
-
             var result = errors.Count == 0;
 
             return result;

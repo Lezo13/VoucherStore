@@ -7,6 +7,7 @@
     public interface IOrderSqlDataGateway
     {
         Task<IEnumerable<DisplayOrderEntity>> DisplayOrdersAsync(DisplayOrderEntity customer);
+
         Task<IEnumerable<DisplayOrderEntity>> GetAllOrdersAsync();
     }
 }

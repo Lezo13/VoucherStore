@@ -11,7 +11,6 @@
 
     public static class CustomerExtensions
     {
-
         public static WebResponse AsWebResponse(this CreateCustomerResponse response)
         {
             var result = new WebResponse

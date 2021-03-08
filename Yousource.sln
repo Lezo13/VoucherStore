@@ -25,7 +25,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Yousource.Data", "Yousource
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PlaceOrder", "PlaceOrder", "{AE0A2222-FED4-4633-9D8D-A455DD453C57}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yousource.Services.PlaceOrder", "Yousource.Services\Yousource.Services.MailSender\Yousource.Services.PlaceOrder.csproj", "{96B50440-E584-4D93-BF9F-8B52EE499E43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yousource.Services.PlaceOrder", "Yousource.Services\Yousource.Services.PlaceOrder\Yousource.Services.PlaceOrder.csproj", "{96B50440-E584-4D93-BF9F-8B52EE499E43}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DisplayOrder", "DisplayOrder", "{9E8B42B6-540F-492C-BA61-2807F2508B9A}"
 EndProject

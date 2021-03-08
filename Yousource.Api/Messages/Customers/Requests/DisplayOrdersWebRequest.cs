@@ -6,7 +6,6 @@
 
     public class DisplayOrdersWebRequest : WebRequest
     {
-
         [JsonProperty("SenderEmail")]
         public string SenderEmail { get; set; }
     }

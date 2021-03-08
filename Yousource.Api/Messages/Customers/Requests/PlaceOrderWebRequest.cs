@@ -27,6 +27,5 @@
 
         [JsonProperty("TotalSpent")]
         public int TotalSpent { get; set; }
-
     }
 }

@@ -21,7 +21,6 @@
             return result;
         }
 
-
         public static WebResponse<IEnumerable<OrdersWebModel>> AsWebResponse(this GetOrdersResponse response)
         {
             var result = new WebResponse<IEnumerable<OrdersWebModel>>(response.Data?.AsWebModel())
@@ -48,7 +47,6 @@
                 Dedication = model.Dedication,
             };
         }
-
 
         public static IEnumerable<OrdersWebModel> AsWebModel(this IEnumerable<Orders> models)
         {

@@ -107,7 +107,7 @@
 
         public async Task<string> ReadSingleAsync(SqlCommand command)
         {
-            var result = "";
+            var result = string.Empty;
 
             using (var connection = new SqlConnection(this.connectionString))
             {
@@ -125,7 +125,6 @@
                             {
                                 reader.Read();
                                 result = reader[0].ToString();
-
                             }
                         }
                     }

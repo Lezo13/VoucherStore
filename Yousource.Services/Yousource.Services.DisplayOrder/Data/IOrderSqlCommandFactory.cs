@@ -6,6 +6,7 @@
     public interface IOrderSqlCommandFactory
     {
         SqlCommand CreateDisplayOrdersCommand(DisplayOrderEntity customer);
+
         SqlCommand CreateGetAllOrdersCommand();
     }
 }

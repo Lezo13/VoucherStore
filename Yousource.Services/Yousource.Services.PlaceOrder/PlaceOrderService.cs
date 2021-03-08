@@ -44,6 +44,8 @@
             {
                 var spec = new ValidSendEmailRequestSpecification();
 
+                //// Validate using Specification classes. You can leverage factories to inject
+                //// your specifications if it touches the SMTP Server
                 if (spec.IsSatisfiedBy(request, ref errors))
                 {
                     MailMessage mail = new MailMessage();
@@ -70,9 +72,6 @@
                     //// Communicate Specification-added errors, and return appropriate error.
                     result.SetError(Errors.CreateValidationError, errors);
                 }
-
-                //// Validate using Specification classes. You can leverage factories to inject
-                //// your specifications if it touches the database
                 
                 var emailEntity = request.AsEntity();
 
@@ -106,8 +105,6 @@
                 }
 
                 await this.ordersdataGateway.InsertOrdersAsync(emailEntity);
-
-                
             }
             catch (Exception ex)
             {

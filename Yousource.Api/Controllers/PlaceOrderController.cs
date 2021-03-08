@@ -32,7 +32,6 @@
         //// Controller code should only contain two lines i.e. invocation of service
         public async Task<IActionResult> PlaceOrderAsync([FromBody] PlaceOrderWebRequest request)
         {
-
             var result = await this.service.SendEmailAsync(request.AsRequest());
             return this.CreateResponse(result.AsWebResponse());
         }

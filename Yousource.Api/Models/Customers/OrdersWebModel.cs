@@ -5,7 +5,6 @@
 
     public class OrdersWebModel
     {
-
         [JsonProperty("OrderDate")]
         public DateTime OrderDate { get; set; }
 
